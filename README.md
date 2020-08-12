@@ -1,6 +1,6 @@
 Assorted utilities and extensions for .NET.
 
-Based on .NET Standard 2.1 with no additional dependencies.
+Single assembly, based on .NET Standard 2.1, with no additional dependencies.
 
 Licensed under [Apache 2.0](LICENSE).
 
