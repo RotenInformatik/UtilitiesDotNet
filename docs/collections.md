@@ -2,11 +2,11 @@
 
 # Collections
 
-* [Extensions](#Extensions)
-* [Concurrent](#Concurrent)
-* [Generic](#Generic)
-* [Specialized](#Specialized)
-* [Virtualization](#Virtualization)
+* [Extensions](#extensions)
+* [Concurrent](#concurrent)
+* [Generic](#generic)
+* [Specialized](#specialized)
+* [Virtualization](#virtualization)
 
 ## Extensions
 
