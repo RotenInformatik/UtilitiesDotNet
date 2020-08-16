@@ -2,6 +2,12 @@
 
 # Collections
 
+* [Extensions](#Extensions)
+* [Concurrent](#Concurrent)
+* [Generic](#Generic)
+* [Specialized](#Specialized)
+* [Virtualization](#Virtualization)
+
 ## Extensions
 
 Namespace: `RI.Utilities.Collections`
