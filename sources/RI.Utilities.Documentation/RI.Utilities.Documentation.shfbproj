@@ -121,8 +121,9 @@
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <NamingMethod>MemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <RootNamespaceContainer>True</RootNamespaceContainer>
-    <RootNamespaceTitle>API reference</RootNamespaceTitle>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle>
+    </RootNamespaceTitle>
     <NamespaceGrouping>False</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
@@ -152,13 +153,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Content" />
-    <Folder Include="Content\VersionHistory" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Content\Assemblies.aml" />
-    <None Include="Content\VersionHistory.aml" />
-    <None Include="Content\VersionHistory\01_00_00.aml" />
-    <None Include="Content\Overview.aml" />
   </ItemGroup>
   <ItemGroup>
     <ContentLayout Include="ContentLayout.content" />

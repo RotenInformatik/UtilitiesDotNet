@@ -1,23 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Topics>
-  <Topic id="56ce73e6-0d39-4ef0-9d7c-d3e04dc17729" visible="True" isDefault="true" title="Overview">
-    <HelpKeywords>
-      <HelpKeyword index="K" term="welcome, overview, home, start" />
-    </HelpKeywords>
-  </Topic>
-  <Topic id="c056af51-ae4d-4fc5-b249-69cd25fe9844" visible="True" title="Assemblies">
-    <HelpKeywords>
-      <HelpKeyword index="K" term="assemblies, assembly, dependencies, dependency" />
-    </HelpKeywords>
-  </Topic>
-  <Topic id="632bef67-d460-4ea6-bb61-3efad27a34c8" visible="True" isExpanded="true" title="Version history">
-    <HelpKeywords>
-      <HelpKeyword index="K" term="version, history, changes" />
-    </HelpKeywords>
-    <Topic id="638eb805-6027-4225-9f29-e174b37e4e14" visible="True" isSelected="true" title="1.0.0">
-      <HelpKeywords>
-        <HelpKeyword index="K" term="version, 1.0.0" />
-      </HelpKeywords>
-    </Topic>
-  </Topic>
-</Topics>
+<Topics />
