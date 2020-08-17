@@ -4,4 +4,4 @@ Single assembly, based on .NET Standard 2.1, with no additional dependencies.
 
 Licensed under [Apache 2.0](LICENSE).
 
-[Documentation](https://roteninformatik.github.io/Utilities/)
+[Documentation](https://roteninformatik.github.io/UtilitiesDotNet/)
