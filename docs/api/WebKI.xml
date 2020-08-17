@@ -112,9 +112,6 @@
   <HelpKINode Title="AsReadOnlyDictionary&lt;TKey, TValue&gt; method" Url="html/M_RI_Utilities_Collections_IReadOnlyDictionaryExtensions_AsReadOnlyDictionary__2.htm" />
   <HelpKINode Title="AsReadOnlyList(Of T) method" Url="html/M_RI_Utilities_Collections_IReadonlyListExtensions_AsReadOnlyList__1.htm" />
   <HelpKINode Title="AsReadOnlyList&lt;T&gt; method" Url="html/M_RI_Utilities_Collections_IReadonlyListExtensions_AsReadOnlyList__1.htm" />
-  <HelpKINode Title="assemblies">
-    <HelpKINode Title="assembly, dependencies, dependency" Url="html/c056af51-ae4d-4fc5-b249-69cd25fe9844.htm" />
-  </HelpKINode>
   <HelpKINode Title="AssemblyExtensions class">
     <HelpKINode Title="AssemblyExtensions Class" Url="html/T_RI_Utilities_Reflection_AssemblyExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_RI_Utilities_Reflection_AssemblyExtensions.htm" />
@@ -3499,10 +3496,6 @@
   <HelpKINode Title="VerifyRealDirectory method" Url="html/M_RI_Utilities_Paths_DirectoryPath_VerifyRealDirectory.htm" />
   <HelpKINode Title="VerifyRealFile method" Url="html/M_RI_Utilities_Paths_FilePath_VerifyRealFile.htm" />
   <HelpKINode Title="VerifyRunning method" Url="html/M_RI_Utilities_Threading_HeavyThread_VerifyRunning.htm" />
-  <HelpKINode Title="version">
-    <HelpKINode Title="1.0.0" Url="html/638eb805-6027-4225-9f29-e174b37e4e14.htm" />
-    <HelpKINode Title="history, changes" Url="html/632bef67-d460-4ea6-bb61-3efad27a34c8.htm" />
-  </HelpKINode>
   <HelpKINode Title="VerticalTap enumeration member" Url="html/T_RI_Utilities_Text_StringEscapeOptions.htm" />
   <HelpKINode Title="VirtualizationCollection(Of T) class">
     <HelpKINode Title="VirtualizationCollection(T) Class" Url="html/T_RI_Utilities_Collections_Virtualization_VirtualizationCollection_1.htm" />
@@ -3592,9 +3585,6 @@
   <HelpKINode Title="WaitingRequests property" Url="html/P_RI_Utilities_Collections_Concurrent_RequestResponseCollection_3_WaitingRequests.htm" />
   <HelpKINode Title="WeightedSortedValues field" Url="html/F_RI_Utilities_Numbers_StatisticValues_WeightedSortedValues.htm" />
   <HelpKINode Title="WeightedValues field" Url="html/F_RI_Utilities_Numbers_StatisticValues_WeightedValues.htm" />
-  <HelpKINode Title="welcome">
-    <HelpKINode Title="overview, home, start" Url="html/56ce73e6-0d39-4ef0-9d7c-d3e04dc17729.htm" />
-  </HelpKINode>
   <HelpKINode Title="WhitespaceTolerant property" Url="html/P_RI_Utilities_DataFormats_Csv_CsvReaderSettings_WhitespaceTolerant.htm" />
   <HelpKINode Title="WildcardMore field" Url="html/F_RI_Utilities_Paths_PathProperties_WildcardMore.htm" />
   <HelpKINode Title="WildcardOne field" Url="html/F_RI_Utilities_Paths_PathProperties_WildcardOne.htm" />
