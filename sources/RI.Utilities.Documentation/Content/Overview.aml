@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="56ce73e6-0d39-4ef0-9d7c-d3e04dc17729" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        <externalLink>
+          <linkText>RI.Utilities</linkText>
+          <linkUri>https://github.com/RotenInformatik/UtilitiesDotNet</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+        is a library of assorted utilities, extensions, and helpers for .NET.
+      </para>
+      <para>
+        It consists of a single assembly (<legacyItalic>RI.Utilities.dll</legacyItalic>) which is based on the
+        <externalLink>
+          <linkText>.NET Standard 2.1</linkText>
+          <linkUri>https://docs.microsoft.com/en-us/dotnet/standard/net-standard</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+        and has no other dependencies.
+      </para>
+      <para>
+        It is licensed under
+        <externalLink>
+          <linkText>Apache 2.0</linkText>
+          <linkUri>http://www.apache.org/licenses/LICENSE-2.0</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>.
+      </para>
+      <para>
+        <externalLink>
+          <linkText>Documentation</linkText>
+          <linkUri>https://roteninformatik.github.io/UtilitiesDotNet/</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+        is available, built with
+        <externalLink>
+          <linkText>Sandcastle Help File Builder</linkText>
+          <linkUri>https://github.com/EWSoftware/SHFB</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>.
+      </para>
+      <para>
+        The compiled library can be obtained using a
+        <externalLink>
+          <linkText>[TODO: Nuget package]</linkText>
+          <linkUri>xxx</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>.
+      </para>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

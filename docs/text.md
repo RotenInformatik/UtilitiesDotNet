@@ -1,4 +1,0 @@
-[Back](index.md)
-
-# Text
-
