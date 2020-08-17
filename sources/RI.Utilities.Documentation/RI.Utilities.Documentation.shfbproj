@@ -15,7 +15,7 @@
     <!-- SHFB properties -->
     <FrameworkVersion>Cross-platform (.NET Core/.NET Standard)</FrameworkVersion>
     <OutputPath>..\..\docs\api\</OutputPath>
-    <HtmlHelpName>RI.Utilities.Documentation</HtmlHelpName>
+    <HtmlHelpName>RI.Utilities</HtmlHelpName>
     <Language>en-US</Language>
     <TransformComponentArguments>
       <Argument Key="logoFile" Value="" />
@@ -30,7 +30,7 @@
       <Argument Key="baseSourceCodeUrl" Value="" />
       <Argument Key="requestExampleUrl" Value="" />
     </TransformComponentArguments>
-    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
     <CleanIntermediates>True</CleanIntermediates>
@@ -151,9 +151,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Content" />
-  </ItemGroup>
   <ItemGroup>
     <ContentLayout Include="ContentLayout.content" />
   </ItemGroup>

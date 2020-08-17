@@ -4,7 +4,7 @@
 
 # Assemblies
 
-| Assembly         | Framework & Platform      | Dependencies | Remarks |
-| ---------------- | ------------------------- | ------------ | ------- |
-| RI.Utilities.dll | .NET Standard 2.1, AnyCpu | *none*       |         |
+| Assembly           | Framework & Platform      | Dependencies | Remarks |
+| ------------------ | ------------------------- | ------------ | ------- |
+| `RI.Utilities.dll` | .NET Standard 2.1, AnyCpu | *none*       | *none*  |
 
