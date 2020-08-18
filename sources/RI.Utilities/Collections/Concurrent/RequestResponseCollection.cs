@@ -244,6 +244,7 @@ namespace RI.Utilities.Collections.Concurrent
         /// <summary>
         ///     Issues the same response to all currently waiting requests and finishes them.
         /// </summary>
+        /// <param name="response"> The response. </param>
         /// <returns>
         ///     The number of finished requests.
         /// </returns>

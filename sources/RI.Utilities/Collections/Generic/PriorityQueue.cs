@@ -122,6 +122,9 @@ namespace RI.Utilities.Collections.Generic
         #region Interface: IPriorityQueue<T>
 
         /// <inheritdoc />
+        /// <value>
+        /// The number of items contained in the priority queue.
+        /// </value>
         /// <remarks>
         ///     <para>
         ///         This is a O(x) operation where x is the number of priorities currently in use.
@@ -321,8 +324,7 @@ namespace RI.Utilities.Collections.Generic
 
             while (this.Count > 0)
             {
-                int priority;
-                T item = this.Dequeue(out priority);
+                T item = this.Dequeue(out int priority);
                 queue.Enqueue(item, priority);
                 count++;
             }

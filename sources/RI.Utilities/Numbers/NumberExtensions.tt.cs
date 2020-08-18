@@ -30,6 +30,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Clamp (this sbyte value, sbyte min, sbyte max)
         {
             if(value < min)
@@ -51,6 +52,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte ClampMin (this sbyte value, sbyte min)
         {
             if(value < min)
@@ -68,6 +70,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte ClampMax (this sbyte value, sbyte max)
         {
             if(value > max)
@@ -90,6 +93,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(false)]
         public static sbyte Quantize (this sbyte value, sbyte multiple) => (sbyte)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -101,6 +105,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Quantize (this sbyte value, sbyte multiple, MidpointRounding rounding) => (sbyte)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -111,6 +116,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Gcd (this sbyte x, sbyte y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -121,6 +127,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Lcm (this sbyte x, sbyte y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -136,6 +143,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte Sum (this IEnumerable<sbyte> values)
         {
             if(values == null)
@@ -164,6 +172,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte Min (this IEnumerable<sbyte> values)
         {
             if(values == null)
@@ -195,6 +204,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte Max (this IEnumerable<sbyte> values)
         {
             if(values == null)
@@ -230,6 +240,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<float> AsFloat (this IEnumerable<sbyte> values)
         {
             if(values == null)
@@ -254,6 +265,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<double> AsDouble (this IEnumerable<sbyte> values)
         {
             if(values == null)
@@ -277,6 +289,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static StatisticValues GetStatistics (this IEnumerable<sbyte> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -287,6 +300,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(false)]
         public static List<int> GetDigits (this sbyte value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -310,6 +324,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Clamp (this byte value, byte min, byte max)
         {
             if(value < min)
@@ -331,6 +346,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte ClampMin (this byte value, byte min)
         {
             if(value < min)
@@ -348,6 +364,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte ClampMax (this byte value, byte max)
         {
             if(value > max)
@@ -370,6 +387,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static byte Quantize (this byte value, byte multiple) => (byte)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -381,6 +399,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Quantize (this byte value, byte multiple, MidpointRounding rounding) => (byte)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -391,6 +410,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Gcd (this byte x, byte y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -401,6 +421,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Lcm (this byte x, byte y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -416,6 +437,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static byte Sum (this IEnumerable<byte> values)
         {
             if(values == null)
@@ -444,6 +466,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static byte Min (this IEnumerable<byte> values)
         {
             if(values == null)
@@ -475,6 +498,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static byte Max (this IEnumerable<byte> values)
         {
             if(values == null)
@@ -510,6 +534,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<byte> values)
         {
             if(values == null)
@@ -534,6 +559,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<byte> values)
         {
             if(values == null)
@@ -557,6 +583,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<byte> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -567,6 +594,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(true)]
         public static List<int> GetDigits (this byte value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -590,6 +618,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Clamp (this short value, short min, short max)
         {
             if(value < min)
@@ -611,6 +640,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short ClampMin (this short value, short min)
         {
             if(value < min)
@@ -628,6 +658,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short ClampMax (this short value, short max)
         {
             if(value > max)
@@ -650,6 +681,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static short Quantize (this short value, short multiple) => (short)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -661,6 +693,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Quantize (this short value, short multiple, MidpointRounding rounding) => (short)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -671,6 +704,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Gcd (this short x, short y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -681,6 +715,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Lcm (this short x, short y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -696,6 +731,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static short Sum (this IEnumerable<short> values)
         {
             if(values == null)
@@ -724,6 +760,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static short Min (this IEnumerable<short> values)
         {
             if(values == null)
@@ -755,6 +792,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static short Max (this IEnumerable<short> values)
         {
             if(values == null)
@@ -790,6 +828,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<short> values)
         {
             if(values == null)
@@ -814,6 +853,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<short> values)
         {
             if(values == null)
@@ -837,6 +877,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<short> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -847,6 +888,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(true)]
         public static List<int> GetDigits (this short value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -870,6 +912,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Clamp (this ushort value, ushort min, ushort max)
         {
             if(value < min)
@@ -891,6 +934,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort ClampMin (this ushort value, ushort min)
         {
             if(value < min)
@@ -908,6 +952,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort ClampMax (this ushort value, ushort max)
         {
             if(value > max)
@@ -930,6 +975,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(false)]
         public static ushort Quantize (this ushort value, ushort multiple) => (ushort)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -941,6 +987,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Quantize (this ushort value, ushort multiple, MidpointRounding rounding) => (ushort)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -951,6 +998,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Gcd (this ushort x, ushort y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -961,6 +1009,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Lcm (this ushort x, ushort y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -976,6 +1025,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort Sum (this IEnumerable<ushort> values)
         {
             if(values == null)
@@ -1004,6 +1054,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort Min (this IEnumerable<ushort> values)
         {
             if(values == null)
@@ -1035,6 +1086,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort Max (this IEnumerable<ushort> values)
         {
             if(values == null)
@@ -1070,6 +1122,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<float> AsFloat (this IEnumerable<ushort> values)
         {
             if(values == null)
@@ -1094,6 +1147,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<double> AsDouble (this IEnumerable<ushort> values)
         {
             if(values == null)
@@ -1117,6 +1171,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static StatisticValues GetStatistics (this IEnumerable<ushort> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -1127,6 +1182,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(false)]
         public static List<int> GetDigits (this ushort value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -1150,6 +1206,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Clamp (this int value, int min, int max)
         {
             if(value < min)
@@ -1171,6 +1228,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int ClampMin (this int value, int min)
         {
             if(value < min)
@@ -1188,6 +1246,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int ClampMax (this int value, int max)
         {
             if(value > max)
@@ -1210,6 +1269,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static int Quantize (this int value, int multiple) => (int)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -1221,6 +1281,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Quantize (this int value, int multiple, MidpointRounding rounding) => (int)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -1231,6 +1292,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Gcd (this int x, int y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -1241,6 +1303,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Lcm (this int x, int y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -1256,6 +1319,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static int Sum (this IEnumerable<int> values)
         {
             if(values == null)
@@ -1284,6 +1348,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static int Min (this IEnumerable<int> values)
         {
             if(values == null)
@@ -1315,6 +1380,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static int Max (this IEnumerable<int> values)
         {
             if(values == null)
@@ -1350,6 +1416,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<int> values)
         {
             if(values == null)
@@ -1374,6 +1441,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<int> values)
         {
             if(values == null)
@@ -1397,6 +1465,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<int> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -1407,6 +1476,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(true)]
         public static List<int> GetDigits (this int value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -1430,6 +1500,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Clamp (this uint value, uint min, uint max)
         {
             if(value < min)
@@ -1451,6 +1522,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint ClampMin (this uint value, uint min)
         {
             if(value < min)
@@ -1468,6 +1540,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint ClampMax (this uint value, uint max)
         {
             if(value > max)
@@ -1490,6 +1563,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(false)]
         public static uint Quantize (this uint value, uint multiple) => (uint)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -1501,6 +1575,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Quantize (this uint value, uint multiple, MidpointRounding rounding) => (uint)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -1511,6 +1586,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Gcd (this uint x, uint y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -1521,6 +1597,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Lcm (this uint x, uint y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -1536,6 +1613,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint Sum (this IEnumerable<uint> values)
         {
             if(values == null)
@@ -1564,6 +1642,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint Min (this IEnumerable<uint> values)
         {
             if(values == null)
@@ -1595,6 +1674,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint Max (this IEnumerable<uint> values)
         {
             if(values == null)
@@ -1630,6 +1710,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<float> AsFloat (this IEnumerable<uint> values)
         {
             if(values == null)
@@ -1654,6 +1735,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<double> AsDouble (this IEnumerable<uint> values)
         {
             if(values == null)
@@ -1677,6 +1759,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static StatisticValues GetStatistics (this IEnumerable<uint> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -1687,6 +1770,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(false)]
         public static List<int> GetDigits (this uint value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -1710,6 +1794,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Clamp (this long value, long min, long max)
         {
             if(value < min)
@@ -1731,6 +1816,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long ClampMin (this long value, long min)
         {
             if(value < min)
@@ -1748,6 +1834,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long ClampMax (this long value, long max)
         {
             if(value > max)
@@ -1770,6 +1857,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static long Quantize (this long value, long multiple) => (long)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -1781,6 +1869,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Quantize (this long value, long multiple, MidpointRounding rounding) => (long)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -1791,6 +1880,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Gcd (this long x, long y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -1801,6 +1891,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Lcm (this long x, long y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -1816,6 +1907,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static long Sum (this IEnumerable<long> values)
         {
             if(values == null)
@@ -1844,6 +1936,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static long Min (this IEnumerable<long> values)
         {
             if(values == null)
@@ -1875,6 +1968,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static long Max (this IEnumerable<long> values)
         {
             if(values == null)
@@ -1910,6 +2004,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<long> values)
         {
             if(values == null)
@@ -1934,6 +2029,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<long> values)
         {
             if(values == null)
@@ -1957,6 +2053,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<long> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -1967,6 +2064,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(true)]
         public static List<int> GetDigits (this long value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -1990,6 +2088,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Clamp (this ulong value, ulong min, ulong max)
         {
             if(value < min)
@@ -2011,6 +2110,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong ClampMin (this ulong value, ulong min)
         {
             if(value < min)
@@ -2028,6 +2128,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong ClampMax (this ulong value, ulong max)
         {
             if(value > max)
@@ -2050,6 +2151,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(false)]
         public static ulong Quantize (this ulong value, ulong multiple) => (ulong)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -2061,6 +2163,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Quantize (this ulong value, ulong multiple, MidpointRounding rounding) => (ulong)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -2071,6 +2174,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Gcd (this ulong x, ulong y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -2081,6 +2185,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Lcm (this ulong x, ulong y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -2096,6 +2201,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong Sum (this IEnumerable<ulong> values)
         {
             if(values == null)
@@ -2124,6 +2230,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong Min (this IEnumerable<ulong> values)
         {
             if(values == null)
@@ -2155,6 +2262,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong Max (this IEnumerable<ulong> values)
         {
             if(values == null)
@@ -2190,6 +2298,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<float> AsFloat (this IEnumerable<ulong> values)
         {
             if(values == null)
@@ -2214,6 +2323,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static IEnumerable<double> AsDouble (this IEnumerable<ulong> values)
         {
             if(values == null)
@@ -2237,6 +2347,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
         public static StatisticValues GetStatistics (this IEnumerable<ulong> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -2247,6 +2358,7 @@ namespace RI.Utilities.Numbers
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        [CLSCompliant(false)]
         public static List<int> GetDigits (this ulong value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -2270,6 +2382,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Clamp (this float value, float min, float max)
         {
             if(value < min)
@@ -2291,6 +2404,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float ClampMin (this float value, float min)
         {
             if(value < min)
@@ -2308,6 +2422,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float ClampMax (this float value, float max)
         {
             if(value > max)
@@ -2330,6 +2445,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static float Quantize (this float value, float multiple) => (float)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -2341,6 +2457,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Quantize (this float value, float multiple, MidpointRounding rounding) => (float)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -2351,6 +2468,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Gcd (this float x, float y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -2361,6 +2479,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Lcm (this float x, float y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -2376,6 +2495,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static float Sum (this IEnumerable<float> values)
         {
             if(values == null)
@@ -2404,6 +2524,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static float Min (this IEnumerable<float> values)
         {
             if(values == null)
@@ -2435,6 +2556,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static float Max (this IEnumerable<float> values)
         {
             if(values == null)
@@ -2470,6 +2592,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<float> values)
         {
             if(values == null)
@@ -2493,6 +2616,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<float> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -2504,6 +2628,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Clamp (this double value, double min, double max)
         {
             if(value < min)
@@ -2525,6 +2650,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double ClampMin (this double value, double min)
         {
             if(value < min)
@@ -2542,6 +2668,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double ClampMax (this double value, double max)
         {
             if(value > max)
@@ -2564,6 +2691,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static double Quantize (this double value, double multiple) => (double)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -2575,6 +2703,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Quantize (this double value, double multiple, MidpointRounding rounding) => (double)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -2585,6 +2714,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Gcd (this double x, double y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -2595,6 +2725,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Lcm (this double x, double y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -2610,6 +2741,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static double Sum (this IEnumerable<double> values)
         {
             if(values == null)
@@ -2638,6 +2770,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static double Min (this IEnumerable<double> values)
         {
             if(values == null)
@@ -2669,6 +2802,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static double Max (this IEnumerable<double> values)
         {
             if(values == null)
@@ -2704,6 +2838,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<double> values)
         {
             if(values == null)
@@ -2727,6 +2862,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<double> values) => new StatisticValues(values);
 
         /// <summary>
@@ -2738,6 +2874,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Clamp (this decimal value, decimal min, decimal max)
         {
             if(value < min)
@@ -2759,6 +2896,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal ClampMin (this decimal value, decimal min)
         {
             if(value < min)
@@ -2776,6 +2914,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal ClampMax (this decimal value, decimal max)
         {
             if(value > max)
@@ -2798,6 +2937,7 @@ namespace RI.Utilities.Numbers
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        [CLSCompliant(true)]
         public static decimal Quantize (this decimal value, decimal multiple) => (decimal)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -2809,6 +2949,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The quantized value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Quantize (this decimal value, decimal multiple, MidpointRounding rounding) => (decimal)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -2819,6 +2960,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Gcd (this decimal x, decimal y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -2829,6 +2971,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Lcm (this decimal x, decimal y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -2844,6 +2987,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static decimal Sum (this IEnumerable<decimal> values)
         {
             if(values == null)
@@ -2872,6 +3016,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static decimal Min (this IEnumerable<decimal> values)
         {
             if(values == null)
@@ -2903,6 +3048,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static decimal Max (this IEnumerable<decimal> values)
         {
             if(values == null)
@@ -2938,6 +3084,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<float> AsFloat (this IEnumerable<decimal> values)
         {
             if(values == null)
@@ -2962,6 +3109,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static IEnumerable<double> AsDouble (this IEnumerable<decimal> values)
         {
             if(values == null)
@@ -2985,6 +3133,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
         public static StatisticValues GetStatistics (this IEnumerable<decimal> values) => new StatisticValues(values.AsDouble());
 
         /// <summary>
@@ -2995,6 +3144,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(false)]
         public static sbyte Abs (this sbyte value) => value < 0 ? (sbyte)(-1 * value) : value;
 
         /// <summary>
@@ -3005,6 +3155,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(false)]
         public static sbyte Sign (this sbyte value) => (sbyte)((value == 0) ? 0 : (value < 0 ? -1 : 1));
 
         /// <summary>
@@ -3029,6 +3180,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(false)]
         public static sbyte Magnitude (this sbyte value)
         {
             if(value == 0)
@@ -3047,6 +3199,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static short Abs (this short value) => value < 0 ? (short)(-1 * value) : value;
 
         /// <summary>
@@ -3057,6 +3210,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static short Sign (this short value) => (short)((value == 0) ? 0 : (value < 0 ? -1 : 1));
 
         /// <summary>
@@ -3081,6 +3235,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static short Magnitude (this short value)
         {
             if(value == 0)
@@ -3099,6 +3254,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static int Abs (this int value) => value < 0 ? (int)(-1 * value) : value;
 
         /// <summary>
@@ -3109,6 +3265,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static int Sign (this int value) => (int)((value == 0) ? 0 : (value < 0 ? -1 : 1));
 
         /// <summary>
@@ -3133,6 +3290,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static int Magnitude (this int value)
         {
             if(value == 0)
@@ -3151,6 +3309,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static long Abs (this long value) => value < 0 ? (long)(-1 * value) : value;
 
         /// <summary>
@@ -3161,6 +3320,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static long Sign (this long value) => (long)((value == 0) ? 0 : (value < 0 ? -1 : 1));
 
         /// <summary>
@@ -3185,6 +3345,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static long Magnitude (this long value)
         {
             if(value == 0)
@@ -3203,6 +3364,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static float Abs (this float value) => value < 0.0f ? (float)(-1.0f * value) : value;
 
         /// <summary>
@@ -3213,6 +3375,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static float Sign (this float value) => (float)((value == 0.0f) ? 0.0f : (value < 0.0f ? -1.0f : 1.0f));
 
         /// <summary>
@@ -3237,6 +3400,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static float Magnitude (this float value)
         {
             if(value == 0.0f)
@@ -3255,6 +3419,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static double Abs (this double value) => value < 0.0 ? (double)(-1.0 * value) : value;
 
         /// <summary>
@@ -3265,6 +3430,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static double Sign (this double value) => (double)((value == 0.0) ? 0.0 : (value < 0.0 ? -1.0 : 1.0));
 
         /// <summary>
@@ -3289,6 +3455,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static double Magnitude (this double value)
         {
             if(value == 0.0)
@@ -3307,6 +3474,7 @@ namespace RI.Utilities.Numbers
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        [CLSCompliant(true)]
         public static decimal Abs (this decimal value) => value < 0.0m ? (decimal)(-1.0m * value) : value;
 
         /// <summary>
@@ -3317,6 +3485,7 @@ namespace RI.Utilities.Numbers
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static decimal Sign (this decimal value) => (decimal)((value == 0.0m) ? 0.0m : (value < 0.0m ? -1.0m : 1.0m));
 
         /// <summary>
@@ -3341,6 +3510,7 @@ namespace RI.Utilities.Numbers
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        [CLSCompliant(true)]
         public static decimal Magnitude (this decimal value)
         {
             if(value == 0.0m)

@@ -45,6 +45,7 @@ namespace RI.Utilities.Collections.Generic
         ///     Removes all occurences of an item from the priority queue.
         ///     Comparison is done using the default equality comparison.
         /// </summary>
+        /// <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
         /// <param name="priorityQueue"> The priority queue. </param>
         /// <param name="item"> The item to remove. </param>
         /// <returns>
@@ -73,6 +74,7 @@ namespace RI.Utilities.Collections.Generic
         ///     Removes all occurences of an item from the priority queue.
         ///     Comparison is done using the specified equality comparer.
         /// </summary>
+        /// <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
         /// <param name="priorityQueue"> The priority queue. </param>
         /// <param name="item"> The item to remove. </param>
         /// <param name="comparer"> The comparer to use to test which items to remove. </param>
@@ -107,6 +109,7 @@ namespace RI.Utilities.Collections.Generic
         ///     Removes all occurences of an item from the priority queue.
         ///     Comparison is done using the specified function.
         /// </summary>
+        /// <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
         /// <param name="priorityQueue"> The priority queue. </param>
         /// <param name="item"> The item to remove. </param>
         /// <param name="comparer"> The function to use to test which items to remove. </param>
@@ -141,6 +144,7 @@ namespace RI.Utilities.Collections.Generic
         /// <summary>
         ///     Removes items from the queue based on a predicate.
         /// </summary>
+        /// <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
         /// <param name="priorityQueue"> The priority queue. </param>
         /// <param name="predicate"> The predicate. </param>
         /// <returns>
@@ -174,8 +178,7 @@ namespace RI.Utilities.Collections.Generic
 
             while (priorityQueue.Count > 0)
             {
-                int priority;
-                T queueItem = priorityQueue.Dequeue(out priority);
+                T queueItem = priorityQueue.Dequeue(out int priority);
                 queueItems.Add(new RemovalTuple<T>(queueItem, priority));
             }
 

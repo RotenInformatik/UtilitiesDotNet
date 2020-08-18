@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 // ReSharper disable RedundantCast
 
 namespace RI.Utilities.Numbers
@@ -18,6 +20,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Gcd (sbyte x, sbyte y)
         {
             while (!(y == 0))
@@ -37,6 +40,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static sbyte Lcm (sbyte x, sbyte y)
         {
             return (sbyte)((x / MathUtils.Gcd(x, y)) * y);
@@ -50,6 +54,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Gcd (byte x, byte y)
         {
             while (!(y == 0))
@@ -69,6 +74,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static byte Lcm (byte x, byte y)
         {
             return (byte)((x / MathUtils.Gcd(x, y)) * y);
@@ -82,6 +88,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Gcd (short x, short y)
         {
             while (!(y == 0))
@@ -101,6 +108,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static short Lcm (short x, short y)
         {
             return (short)((x / MathUtils.Gcd(x, y)) * y);
@@ -114,6 +122,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Gcd (ushort x, ushort y)
         {
             while (!(y == 0))
@@ -133,6 +142,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ushort Lcm (ushort x, ushort y)
         {
             return (ushort)((x / MathUtils.Gcd(x, y)) * y);
@@ -146,6 +156,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Gcd (int x, int y)
         {
             while (!(y == 0))
@@ -165,6 +176,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static int Lcm (int x, int y)
         {
             return (int)((x / MathUtils.Gcd(x, y)) * y);
@@ -178,6 +190,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Gcd (uint x, uint y)
         {
             while (!(y == 0))
@@ -197,6 +210,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static uint Lcm (uint x, uint y)
         {
             return (uint)((x / MathUtils.Gcd(x, y)) * y);
@@ -210,6 +224,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Gcd (long x, long y)
         {
             while (!(y == 0))
@@ -229,6 +244,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static long Lcm (long x, long y)
         {
             return (long)((x / MathUtils.Gcd(x, y)) * y);
@@ -242,6 +258,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Gcd (ulong x, ulong y)
         {
             while (!(y == 0ul))
@@ -261,6 +278,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(false)]
         public static ulong Lcm (ulong x, ulong y)
         {
             return (ulong)((x / MathUtils.Gcd(x, y)) * y);
@@ -274,6 +292,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Gcd (float x, float y)
         {
             while (!(y.AlmostZero()))
@@ -293,6 +312,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static float Lcm (float x, float y)
         {
             return (float)((x / MathUtils.Gcd(x, y)) * y);
@@ -306,6 +326,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Gcd (double x, double y)
         {
             while (!(y.AlmostZero()))
@@ -325,6 +346,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static double Lcm (double x, double y)
         {
             return (double)((x / MathUtils.Gcd(x, y)) * y);
@@ -338,6 +360,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Gcd (decimal x, decimal y)
         {
             while (!(y == 0.0m))
@@ -357,6 +380,7 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The clamped value.
         /// </returns>
+        [CLSCompliant(true)]
         public static decimal Lcm (decimal x, decimal y)
         {
             return (decimal)((x / MathUtils.Gcd(x, y)) * y);

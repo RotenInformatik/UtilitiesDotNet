@@ -43,6 +43,11 @@
             </returns>
             <exception cref="T:System.ArgumentNullException"> <paramref name="reader" /> or <paramref name="data" /> is null. </exception>
         </member>
+        <member name="T:RI.Utilities.Binary.NamespaceDoc">
+            <summary>
+                Contains utilities and extensions for working with binary data and I/O.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Collections.Concurrent.RequestResponseCollection`3">
             <summary>
                 Implements a base class for request/response collections.
@@ -191,6 +196,7 @@
             <summary>
                 Issues the same response to all currently waiting requests and finishes them.
             </summary>
+            <param name="response"> The response. </param>
             <returns>
                 The number of finished requests.
             </returns>
@@ -718,6 +724,11 @@
         <member name="M:RI.Utilities.Collections.Concurrent.RequestResponseQueue`2.RemoveRequest(RI.Utilities.Collections.Concurrent.RequestResponseItem{`0,`1})">
             <inheritdoc />
         </member>
+        <member name="T:RI.Utilities.Collections.Concurrent.NamespaceDoc">
+            <summary>
+                Contains new collection types for asynchronous and multi-threading scenarios.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Collections.Generic.IPool`1">
             <summary>
                 Defines a generic interface for pools which can be used to store and recycle objects.
@@ -1132,6 +1143,7 @@
                 Removes all occurences of an item from the priority queue.
                 Comparison is done using the default equality comparison.
             </summary>
+            <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
             <param name="priorityQueue"> The priority queue. </param>
             <param name="item"> The item to remove. </param>
             <returns>
@@ -1152,6 +1164,7 @@
                 Removes all occurences of an item from the priority queue.
                 Comparison is done using the specified equality comparer.
             </summary>
+            <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
             <param name="priorityQueue"> The priority queue. </param>
             <param name="item"> The item to remove. </param>
             <param name="comparer"> The comparer to use to test which items to remove. </param>
@@ -1173,6 +1186,7 @@
                 Removes all occurences of an item from the priority queue.
                 Comparison is done using the specified function.
             </summary>
+            <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
             <param name="priorityQueue"> The priority queue. </param>
             <param name="item"> The item to remove. </param>
             <param name="comparer"> The function to use to test which items to remove. </param>
@@ -1193,6 +1207,7 @@
             <summary>
                 Removes items from the queue based on a predicate.
             </summary>
+            <typeparam name="T"> The type of the items in <paramref name="priorityQueue" />. </typeparam>
             <param name="priorityQueue"> The priority queue. </param>
             <param name="predicate"> The predicate. </param>
             <returns>
@@ -1454,6 +1469,9 @@
         </member>
         <member name="P:RI.Utilities.Collections.Generic.PriorityQueue`1.Count">
             <inheritdoc />
+            <value>
+            The number of items contained in the priority queue.
+            </value>
             <remarks>
                 <para>
                     This is a O(x) operation where x is the number of priorities currently in use.
@@ -1521,6 +1539,11 @@
             <returns>
                 true if the item is to be removed, false otherwise.
             </returns>
+        </member>
+        <member name="T:RI.Utilities.Collections.Generic.NamespaceDoc">
+            <summary>
+                Contains new generic collection types.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Collections.ICollectionExtensions">
             <summary>
@@ -3499,6 +3522,11 @@
         <member name="M:RI.Utilities.Collections.Specialized.ClonePool`1.Create">
             <inheritdoc />
         </member>
+        <member name="T:RI.Utilities.Collections.Specialized.NamespaceDoc">
+            <summary>
+                Contains new typed collection types of generic collections.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Collections.StackExtensions">
             <summary>
                 Provides utility/extension methods for the <see cref="T:System.Collections.Generic.Stack`1" /> type.
@@ -3770,6 +3798,16 @@
         </member>
         <member name="P:RI.Utilities.Collections.Virtualization.VirtualizationCollection`1.RI#Utilities#ObjectModel#ISynchronizable#SyncRoot">
             <inheritdoc />
+        </member>
+        <member name="T:RI.Utilities.Collections.Virtualization.NamespaceDoc">
+            <summary>
+                Contains new collection types for data virtualization and on-demand loading.
+            </summary>
+        </member>
+        <member name="T:RI.Utilities.Collections.NamespaceDoc">
+            <summary>
+                Contains collection utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Comparison.CollectionComparer`1">
             <summary>
@@ -4223,6 +4261,11 @@
                 The value which indicates wheter x is less than y (return value &lt; 0), equals y (return value = 0), or greater than y (return value &gt; 0).
             </returns>
         </member>
+        <member name="T:RI.Utilities.Comparison.NamespaceDoc">
+            <summary>
+                Contains object and collection comparison utilities and extensions.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.ComponentModel.DependencyResolverWrapper">
             <summary>
                 Implements a wrapper for <see cref="T:RI.Utilities.ComponentModel.IDependencyResolver" /> and <see cref="T:System.IServiceProvider" /> which also allows modification/interception of resolved instances.
@@ -4379,6 +4422,11 @@
                 The list which contains all instances of <typeparamref name="T" />.
                 If no instances are available, an empty list is returned.
             </returns>
+        </member>
+        <member name="T:RI.Utilities.ComponentModel.NamespaceDoc">
+            <summary>
+                Contains new contracts and types for creating component models.
+            </summary>
         </member>
         <member name="T:RI.Utilities.DataFormats.Csv.CsvDocument">
             <summary>
@@ -5063,6 +5111,11 @@
                 </para>
             </remarks>
         </member>
+        <member name="T:RI.Utilities.DataFormats.Csv.NamespaceDoc">
+            <summary>
+                Contains types to process CSV data.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.DataFormats.Ini.Elements.CommentIniElement">
             <summary>
                 Represents a comment in INI data.
@@ -5212,6 +5265,11 @@
         </member>
         <member name="M:RI.Utilities.DataFormats.Ini.Elements.ValueIniElement.ToString">
             <inheritdoc />
+        </member>
+        <member name="T:RI.Utilities.DataFormats.Ini.Elements.NamespaceDoc">
+            <summary>
+                Contains INI element types which represent INI data elements in a INI document.
+            </summary>
         </member>
         <member name="T:RI.Utilities.DataFormats.Ini.IniDocument">
             <summary>
@@ -6700,6 +6758,16 @@
                 </para>
             </remarks>
         </member>
+        <member name="T:RI.Utilities.DataFormats.Ini.NamespaceDoc">
+            <summary>
+                Contains types to process INI data.
+            </summary>
+        </member>
+        <member name="T:RI.Utilities.DataFormats.NamespaceDoc">
+            <summary>
+                Contains new types for handling various data formats.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Dates.DateTimeExtensions">
             <summary>
                 Provides utility/extension methods for the <see cref="T:System.DateTime" /> and <see cref="T:System.DateTimeOffset" /> types.
@@ -6872,6 +6940,11 @@
                 The time span as a sortable string in the following format %d-hh-mm-ss-fff where the dash is the used separator.
                 Example: <c> 1_14_30_50_333 </c> when used with the underscore as a separator.
             </returns>
+        </member>
+        <member name="T:RI.Utilities.Dates.NamespaceDoc">
+            <summary>
+                Contains date and time utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Exceptions.EmptyStringArgumentException">
             <summary>
@@ -7353,6 +7426,11 @@
             <param name="info"> The serialization data. </param>
             <param name="context"> The type of the source of the serialization data. </param>
         </member>
+        <member name="T:RI.Utilities.Exceptions.NamespaceDoc">
+            <summary>
+                Contains new general exception types and exception utilities and extensions.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Globalization.CultureInfoExtensions">
             <summary>
                 Provides utility/extension methods for the <see cref="T:System.Globalization.CultureInfo" /> type.
@@ -7375,6 +7453,11 @@
                 </para>
             </remarks>
             <exception cref="T:System.ArgumentNullException"> <paramref name="culture" /> or <paramref name="other" /> is null. </exception>
+        </member>
+        <member name="T:RI.Utilities.Globalization.NamespaceDoc">
+            <summary>
+                Contains globalization utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Numbers.DoubleExtensions">
             <summary>
@@ -7483,7 +7566,6 @@
                 Determines whether a single precision floating point number is "NaN"/"Not-a-Number" or infinity (positive or negative).
             </summary>
             <param name="value"> The single precision floating point number. </param>
-            <returns> </returns>
             <returns>
                 true if the number is "NaN"/"Not-a-Number" or infinity (either positive or negative), false otherwise.
             </returns>
@@ -12157,6 +12239,11 @@
         <member name="M:RI.Utilities.Numbers.StatisticValues.System#ICloneable#Clone">
             <inheritdoc />
         </member>
+        <member name="T:RI.Utilities.Numbers.NamespaceDoc">
+            <summary>
+                Contains number and mathematical utilities and extensions.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.ObjectModel.ICloneable`1">
             <summary>
                 Defines an interface to implement type-safe cloning.
@@ -12217,6 +12304,11 @@
             <value>
                 An object that can be used to synchronize access to the implementing object.
             </value>
+        </member>
+        <member name="T:RI.Utilities.ObjectModel.NamespaceDoc">
+            <summary>
+                Contains new contracts and types for creating object models.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Paths.DirectoryPath">
             <summary>
@@ -13852,6 +13944,11 @@
                 The path is a UNC style path (e.g. \\server\share).
             </summary>
         </member>
+        <member name="T:RI.Utilities.Paths.NamespaceDoc">
+            <summary>
+                Contains new types for working with file and directory paths.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Randomizing.RandomExtensions">
             <summary>
                 Provides utility/extension methods for the <see cref="T:System.Random" /> type.
@@ -14274,6 +14371,11 @@
         </member>
         <member name="M:RI.Utilities.Randomizing.RandomStream.Write(System.Byte[],System.Int32,System.Int32)">
             <inheritdoc />
+        </member>
+        <member name="T:RI.Utilities.Randomizing.NamespaceDoc">
+            <summary>
+                Contains randomizing utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Reflection.AssemblyExtensions">
             <summary>
@@ -14843,6 +14945,11 @@
             </remarks>
             <exception cref="T:System.ArgumentNullException"> <paramref name="typeToFind" /> is null. </exception>
             <exception cref="T:RI.Utilities.Exceptions.EmptyStringArgumentException"> <paramref name="typeToFind" /> is an empty string. </exception>
+        </member>
+        <member name="T:RI.Utilities.Reflection.NamespaceDoc">
+            <summary>
+                Contains reflection utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Streams.BinaryStream">
             <summary>
@@ -15646,6 +15753,11 @@
                 Intercepts any disposing attempts to the wrapped stream.
             </summary>
             <param name="disposing"> true to release both managed and unmanaged resources, false to release only unmanaged resources. </param>
+        </member>
+        <member name="T:RI.Utilities.Streams.NamespaceDoc">
+            <summary>
+                Contains new stream implementations and stream utilities and extensions.
+            </summary>
         </member>
         <member name="T:RI.Utilities.Text.AlphanumComparer">
             <summary>
@@ -16719,7 +16831,7 @@
             </summary>
             <param name="values"> The sequence of strings to get the maximum length from. </param>
             <returns>
-                The length of the string with the maximum length.
+                The length of the string with the maximum length or zero if <paramref name="values"/> is empty.
             </returns>
             <remarks>
                 <para>
@@ -16735,7 +16847,7 @@
             <param name="values"> The sequence of strings to get the minimum length from. </param>
             <param name="ignoreZeroLength"> Specifies whether string with zero length do not count. </param>
             <returns>
-                The length of the string with the minimum length.
+                The length of the string with the minimum length or zero if <paramref name="values"/> is empty.
             </returns>
             <remarks>
                 <para>
@@ -17924,6 +18036,11 @@
                 The array of lines read to the end of the reader or null if the end of the reader was reached without reading any line.
             </returns>
         </member>
+        <member name="T:RI.Utilities.Text.NamespaceDoc">
+            <summary>
+                Contains utilities and extensions for working with text data and I/O.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Threading.HeavyThread">
             <summary>
                 Implements a heavy-weight thread which encapsulates thread setup and execution and also captures exceptions.
@@ -18394,6 +18511,11 @@
             <param name="info"> The serialization data. </param>
             <param name="context"> The type of the source of the serialization data. </param>
         </member>
+        <member name="T:RI.Utilities.Threading.NamespaceDoc">
+            <summary>
+                Contains new thread abstractions and thread utilities and extensions.
+            </summary>
+        </member>
         <member name="T:RI.Utilities.Xml.XDocumentExtensions">
             <summary>
                 Provides utility/extension methods for the <see cref="T:System.Xml.Linq.XDocument" /> type.
@@ -18423,6 +18545,11 @@
             <returns> The converted <see cref="T:System.Xml.Linq.XDocument" />. </returns>
             <exception cref="T:System.ArgumentNullException"> <paramref name="xmlDocument" /> is null. </exception>
             TODO: Add overload with LoadOptions
+        </member>
+        <member name="T:RI.Utilities.Xml.NamespaceDoc">
+            <summary>
+                Contains utilities and extensions for working with XML data and I/O.
+            </summary>
         </member>
     </members>
 </doc>

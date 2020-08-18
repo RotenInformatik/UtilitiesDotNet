@@ -8,4 +8,4 @@
 
 First version.
 
-Partial successor of the [Decoupling & Utilities Framework](https://github.com/RotenInformatik/RI_Framework).
+Partial successor of [Decoupling & Utilities Framework](https://github.com/RotenInformatik/RI_Framework) which is being archived.

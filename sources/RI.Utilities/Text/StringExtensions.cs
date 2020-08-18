@@ -623,7 +623,7 @@ namespace RI.Utilities.Text
         /// </summary>
         /// <param name="values"> The sequence of strings to get the maximum length from. </param>
         /// <returns>
-        ///     The length of the string with the maximum length.
+        ///     The length of the string with the maximum length or zero if <paramref name="values"/> is empty.
         /// </returns>
         /// <remarks>
         ///     <para>
@@ -639,16 +639,18 @@ namespace RI.Utilities.Text
             }
 
             int max = int.MinValue;
+            int count = 0;
 
             foreach (string str in values)
             {
+                count++;
                 if (str.Length > max)
                 {
                     max = str.Length;
                 }
             }
 
-            return max;
+            return count == 0 ? 0 : max;
         }
 
         /// <summary>
@@ -657,7 +659,7 @@ namespace RI.Utilities.Text
         /// <param name="values"> The sequence of strings to get the minimum length from. </param>
         /// <param name="ignoreZeroLength"> Specifies whether string with zero length do not count. </param>
         /// <returns>
-        ///     The length of the string with the minimum length.
+        ///     The length of the string with the minimum length or zero if <paramref name="values"/> is empty.
         /// </returns>
         /// <remarks>
         ///     <para>
@@ -673,16 +675,21 @@ namespace RI.Utilities.Text
             }
 
             int min = int.MaxValue;
+            int count = 0;
 
             foreach (string str in values)
             {
-                if (str.Length < min)
+                if ((!ignoreZeroLength) || (str.Length > 0))
                 {
-                    min = str.Length;
+                    count++;
+                    if (str.Length < min)
+                    {
+                        min = str.Length;
+                    }
                 }
             }
 
-            return min;
+            return count == 0 ? 0 : min;
         }
 
         /// <summary>
@@ -918,7 +925,7 @@ namespace RI.Utilities.Text
                 return str;
             }
 
-            separator = separator ?? string.Empty;
+            separator ??= string.Empty;
 
             StringBuilder sb = new StringBuilder((str.Length * count) + (separator.Length * (count - 1)) + 1);
 
@@ -1323,9 +1330,7 @@ namespace RI.Utilities.Text
 
             str = str.ToLowerInvariant();
 
-            bool value;
-
-            if (bool.TryParse(str, out value))
+            if (bool.TryParse(str, out bool value))
             {
                 return value;
             }
@@ -1384,9 +1389,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            byte value;
-
-            if (byte.TryParse(str, style, provider, out value))
+            if (byte.TryParse(str, style, provider, out byte value))
             {
                 return value;
             }
@@ -1594,9 +1597,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            decimal value;
-
-            if (decimal.TryParse(str, style, provider, out value))
+            if (decimal.TryParse(str, style, provider, out decimal value))
             {
                 return value;
             }
@@ -1657,9 +1658,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            double value;
-
-            if (double.TryParse(str, style, provider, out value))
+            if (double.TryParse(str, style, provider, out double value))
             {
                 return value;
             }
@@ -1820,9 +1819,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            float value;
-
-            if (float.TryParse(str, style, provider, out value))
+            if (float.TryParse(str, style, provider, out float value))
             {
                 return value;
             }
@@ -1913,9 +1910,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            short value;
-
-            if (short.TryParse(str, style, provider, out value))
+            if (short.TryParse(str, style, provider, out short value))
             {
                 return value;
             }
@@ -1976,9 +1971,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            int value;
-
-            if (int.TryParse(str, style, provider, out value))
+            if (int.TryParse(str, style, provider, out int value))
             {
                 return value;
             }
@@ -2039,9 +2032,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            long value;
-
-            if (long.TryParse(str, style, provider, out value))
+            if (long.TryParse(str, style, provider, out long value))
             {
                 return value;
             }
@@ -2115,6 +2106,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte? ToSByte (this string str)
         {
             return str.ToSByte(NumberStyles.Any, CultureInfo.CurrentCulture);
@@ -2130,6 +2122,7 @@ namespace RI.Utilities.Text
         ///     The signed byte value represented by the string if the string can be converted into a signed byte, null otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte? ToSByte (this string str, NumberStyles style, IFormatProvider provider)
         {
             if (str == null)
@@ -2137,9 +2130,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            sbyte value;
-
-            if (sbyte.TryParse(str, style, provider, out value))
+            if (sbyte.TryParse(str, style, provider, out sbyte value))
             {
                 return value;
             }
@@ -2160,6 +2151,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static sbyte? ToSByteInvariant (this string str)
         {
             return str.ToSByte(NumberStyles.Any, CultureInfo.InvariantCulture);
@@ -2409,6 +2401,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort? ToUInt16 (this string str)
         {
             return str.ToUInt16(NumberStyles.Any, CultureInfo.CurrentCulture);
@@ -2424,6 +2417,7 @@ namespace RI.Utilities.Text
         ///     The unsigned short value represented by the string if the string can be converted into an unsigned short, null otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort? ToUInt16 (this string str, NumberStyles style, IFormatProvider provider)
         {
             if (str == null)
@@ -2431,9 +2425,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            ushort value;
-
-            if (ushort.TryParse(str, style, provider, out value))
+            if (ushort.TryParse(str, style, provider, out ushort value))
             {
                 return value;
             }
@@ -2454,6 +2446,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ushort? ToUInt16Invariant (this string str)
         {
             return str.ToUInt16(NumberStyles.Any, CultureInfo.InvariantCulture);
@@ -2472,6 +2465,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint? ToUInt32 (this string str)
         {
             return str.ToUInt32(NumberStyles.Any, CultureInfo.CurrentCulture);
@@ -2487,6 +2481,7 @@ namespace RI.Utilities.Text
         ///     The unsigned int value represented by the string if the string can be converted into an unsigned int, null otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint? ToUInt32 (this string str, NumberStyles style, IFormatProvider provider)
         {
             if (str == null)
@@ -2494,9 +2489,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            uint value;
-
-            if (uint.TryParse(str, style, provider, out value))
+            if (uint.TryParse(str, style, provider, out uint value))
             {
                 return value;
             }
@@ -2517,6 +2510,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static uint? ToUInt32Invariant (this string str)
         {
             return str.ToUInt32(NumberStyles.Any, CultureInfo.InvariantCulture);
@@ -2535,6 +2529,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong? ToUInt64 (this string str)
         {
             return str.ToUInt64(NumberStyles.Any, CultureInfo.CurrentCulture);
@@ -2550,6 +2545,7 @@ namespace RI.Utilities.Text
         ///     The unsigned long value represented by the string if the string can be converted into an unsigned long, null otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong? ToUInt64 (this string str, NumberStyles style, IFormatProvider provider)
         {
             if (str == null)
@@ -2557,9 +2553,7 @@ namespace RI.Utilities.Text
                 throw new ArgumentNullException(nameof(str));
             }
 
-            ulong value;
-
-            if (ulong.TryParse(str, style, provider, out value))
+            if (ulong.TryParse(str, style, provider, out ulong value))
             {
                 return value;
             }
@@ -2580,6 +2574,7 @@ namespace RI.Utilities.Text
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        [CLSCompliant(false)]
         public static ulong? ToUInt64Invariant (this string str)
         {
             return str.ToUInt64(NumberStyles.Any, CultureInfo.InvariantCulture);

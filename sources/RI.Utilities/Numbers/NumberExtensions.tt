@@ -25,9 +25,11 @@ namespace RI.Utilities.Numbers
     {
 <#
 string[] types = new string[]		{	"sbyte",	"byte",		"short",	"ushort",	"int",	"uint",		"long",		"ulong",	"float",	"double",	"decimal"	};
+bool[] isClsCompliant = new bool[]  {	false,		true,		true,		false,		true,	false,		true,		false,		true,		true,		true		};
 for (int i1 = 0; i1 < types.Length; i1++)
 {
 string type = types[i1];
+string clsCompliance = isClsCompliant[i1] ? "[CLSCompliant(true)]" : "[CLSCompliant(false)]";
 #>
 
         /// <summary>
@@ -39,6 +41,7 @@ string type = types[i1];
         /// <returns>
         /// The clamped value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> Clamp (this <#=type#> value, <#=type#> min, <#=type#> max)
         {
             if(value < min)
@@ -60,6 +63,7 @@ string type = types[i1];
         /// <returns>
         /// The clamped value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> ClampMin (this <#=type#> value, <#=type#> min)
         {
             if(value < min)
@@ -77,6 +81,7 @@ string type = types[i1];
         /// <returns>
         /// The clamped value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> ClampMax (this <#=type#> value, <#=type#> max)
         {
             if(value > max)
@@ -99,6 +104,7 @@ string type = types[i1];
         /// <see cref="MidpointRounding.ToEven"/> is used for <see cref="MidpointRounding"/>.
         /// </para>
         /// </remarks>
+        <#=clsCompliance#>
         public static <#=type#> Quantize (this <#=type#> value, <#=type#> multiple) => (<#=type#>)(Math.Round((double)value / (double)multiple) * (double)multiple);
 
         /// <summary>
@@ -110,6 +116,7 @@ string type = types[i1];
         /// <returns>
         /// The quantized value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> Quantize (this <#=type#> value, <#=type#> multiple, MidpointRounding rounding) => (<#=type#>)(Math.Round((double)value / (double)multiple, rounding) * (double)multiple);
 
         /// <summary>
@@ -120,6 +127,7 @@ string type = types[i1];
         /// <returns>
         /// The clamped value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> Gcd (this <#=type#> x, <#=type#> y) => MathUtils.Gcd(x, y);
 
         /// <summary>
@@ -130,6 +138,7 @@ string type = types[i1];
         /// <returns>
         /// The clamped value.
         /// </returns>
+        <#=clsCompliance#>
         public static <#=type#> Lcm (this <#=type#> x, <#=type#> y) => MathUtils.Lcm(x, y);
 
         /// <summary>
@@ -145,6 +154,7 @@ string type = types[i1];
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static <#=type#> Sum (this IEnumerable<<#=type#>> values)
         {
             if(values == null)
@@ -173,6 +183,7 @@ string type = types[i1];
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static <#=type#> Min (this IEnumerable<<#=type#>> values)
         {
             if(values == null)
@@ -204,6 +215,7 @@ string type = types[i1];
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static <#=type#> Max (this IEnumerable<<#=type#>> values)
         {
             if(values == null)
@@ -243,6 +255,7 @@ if(type != "float")
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static IEnumerable<float> AsFloat (this IEnumerable<<#=type#>> values)
         {
             if(values == null)
@@ -272,6 +285,7 @@ if(type != "double")
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static IEnumerable<double> AsDouble (this IEnumerable<<#=type#>> values)
         {
             if(values == null)
@@ -295,6 +309,7 @@ if(type != "double")
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static StatisticValues GetStatistics (this IEnumerable<<#=type#>> values) => new StatisticValues(values.AsDouble());
 <#
 }
@@ -315,6 +330,7 @@ if(type == "double")
         /// </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
         public static StatisticValues GetStatistics (this IEnumerable<<#=type#>> values) => new StatisticValues(values);
 <#
 }
@@ -330,6 +346,7 @@ if((type != "float") && (type != "double") && (type != "decimal"))
         /// The list of digits.
         /// The most-significant digit comes first, the least-significant digit comes last.
         /// </returns>
+        <#=clsCompliance#>
         public static List<int> GetDigits (this <#=type#> value)
         {
             string stringValue = value.ToString("D", CultureInfo.InvariantCulture);
@@ -346,16 +363,18 @@ if((type != "float") && (type != "double") && (type != "decimal"))
 <#
 }
 }
-types = new string[]		{	"sbyte",	"short",	"int",	"long",		"float",	"double",	"decimal"	};
+types = new string[]		        {	"sbyte",	"short",	"int",	"long",		"float",	"double",	"decimal"	};
 string[] zeros = new string[]		{	"0",		"0",		"0",	"0",		"0.0f",		"0.0",		"0.0m"		};
-string[] plusOnes = new string[]		{	"1",		"1",		"1",	"1",		"1.0f",		"1.0",		"1.0m"		};
+string[] plusOnes = new string[]	{	"1",		"1",		"1",	"1",		"1.0f",		"1.0",		"1.0m"		};
 string[] minusOnes = new string[]	{	"-1",		"-1",		"-1",	"-1",		"-1.0f",	"-1.0",		"-1.0m"		};
+isClsCompliant = new bool[]  {	false,		true,		true,	true,		true,	    true,		true		};
 for (int i1 = 0; i1 < types.Length; i1++)
 {
 string type = types[i1];
 string zero = zeros[i1];
 string plusOne = plusOnes[i1];
 string minusOne = minusOnes[i1];
+string clsCompliance = isClsCompliant[i1] ? "[CLSCompliant(true)]" : "[CLSCompliant(false)]";
 #>
 
         /// <summary>
@@ -366,6 +385,7 @@ string minusOne = minusOnes[i1];
         /// The absolute number.
         /// </returns>
         // ReSharper disable once IntVariableOverflowInUncheckedContext
+        <#=clsCompliance#>
         public static <#=type#> Abs (this <#=type#> value) => value < <#=zero#> ? (<#=type#>)(<#=minusOne#> * value) : value;
 
         /// <summary>
@@ -376,6 +396,7 @@ string minusOne = minusOnes[i1];
         /// 1 if the number is positive, 0 if the number is zero, -1 if the number is negative.
         /// </returns>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        <#=clsCompliance#>
         public static <#=type#> Sign (this <#=type#> value) => (<#=type#>)((value == <#=zero#>) ? <#=zero#> : (value < <#=zero#> ? <#=minusOne#> : <#=plusOne#>));
 
         /// <summary>
@@ -400,6 +421,7 @@ string minusOne = minusOnes[i1];
         /// </para>
         /// </remarks>
         [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
+        <#=clsCompliance#>
         public static <#=type#> Magnitude (this <#=type#> value)
         {
             if(value == <#=zero#>)

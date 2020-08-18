@@ -60,7 +60,6 @@
         ///     Determines whether a single precision floating point number is "NaN"/"Not-a-Number" or infinity (positive or negative).
         /// </summary>
         /// <param name="value"> The single precision floating point number. </param>
-        /// <returns> </returns>
         /// <returns>
         ///     true if the number is "NaN"/"Not-a-Number" or infinity (either positive or negative), false otherwise.
         /// </returns>
