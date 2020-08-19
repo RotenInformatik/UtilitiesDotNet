@@ -14,6 +14,7 @@ namespace RI.Utilities.Randomizing
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Random" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class RandomExtensions
     {
         #region Constants

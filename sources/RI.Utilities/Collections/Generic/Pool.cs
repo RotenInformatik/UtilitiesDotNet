@@ -6,7 +6,7 @@
 namespace RI.Utilities.Collections.Generic
 {
     /// <summary>
-    ///     Implements a simple pool which supports events for taking and returning.
+    ///     Implements a simple pool which.
     /// </summary>
     /// <typeparam name="T"> The type of objects which can be stored and recycled by the pool. </typeparam>
     /// <remarks>

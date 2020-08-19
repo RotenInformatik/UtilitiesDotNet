@@ -9,6 +9,7 @@ namespace RI.Utilities.Reflection
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Delegate" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class DelegateExtensions
     {
         #region Static Methods

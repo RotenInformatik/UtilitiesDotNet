@@ -9,6 +9,7 @@ namespace RI.Utilities.Reflection
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Type" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class TypeExtensions
     {
         #region Static Methods

@@ -135,7 +135,7 @@ namespace RI.Utilities.DataFormats.Ini
     /// var graphics = doc.GetSection("GraphicsSettings");
     /// 
     /// // set the value of the Difficulty key in the [GameSettings] section
-    /// doc.SetValue("GameSettings", "Difficulty", "Princess");
+    /// doc.SetValue("GameSettings", "Difficulty", "Easy");
     /// 
     /// // save back into the INI file
     /// doc.Save("settings.ini");

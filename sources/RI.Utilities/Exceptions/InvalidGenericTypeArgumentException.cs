@@ -9,6 +9,7 @@ namespace RI.Utilities.Exceptions
     /// <summary>
     ///     The <see cref="InvalidGenericTypeArgumentException" /> is thrown when a generic argument is not of an expected or compatible type.
     /// </summary>
+    [Serializable]
     public class InvalidGenericTypeArgumentException : ArgumentException
     {
         #region Constants

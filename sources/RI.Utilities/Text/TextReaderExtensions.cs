@@ -10,6 +10,7 @@ namespace RI.Utilities.Text
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="TextReader" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class TextReaderExtensions
     {
         #region Static Methods

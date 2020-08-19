@@ -18,6 +18,7 @@ namespace RI.Utilities.Exceptions
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Exception" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class ExceptionExtensions
     {
         #region Constants

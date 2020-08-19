@@ -21,6 +21,7 @@ namespace RI.Utilities.Numbers
     /// <threadsafety static="false" instance="false" />
     /// TODO: Implement IEquatable and override GetHashCode and Equals
     /// TODO: SortedTimesteps
+    /// TODO: Code example
     [Serializable,]
     public struct StatisticValues : ICloneable<StatisticValues>, ICloneable
     {

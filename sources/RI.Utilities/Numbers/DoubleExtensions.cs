@@ -3,6 +3,7 @@
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="double" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class DoubleExtensions
     {
         #region Static Methods

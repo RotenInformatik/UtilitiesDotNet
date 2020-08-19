@@ -31,6 +31,8 @@ namespace RI.Utilities.Threading
     /// <threadsafety static="true" instance="true" />
     /// TODO: OnStopped
     /// TODO: HeavyThreadAwaiter (incl. option for thread configuration callback)
+    /// TODO: Document exception procedure with list
+    /// TODO: Code example
     public abstract class HeavyThread : IDisposable, ISynchronizable
     {
         #region Constants

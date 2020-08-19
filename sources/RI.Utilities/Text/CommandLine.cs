@@ -48,6 +48,7 @@ namespace RI.Utilities.Text
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
+    /// TODO: Code example
     /// TODO: Implement IEquatable
     /// TODO: Implement IComparable
     /// TODO: Implement IFormattable

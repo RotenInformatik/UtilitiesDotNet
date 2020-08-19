@@ -17,8 +17,10 @@ namespace RI.Utilities.ComponentModel
     ///         <see cref="DependencyResolverWrapper" /> can also be used to wrap a <see cref="IDependencyResolver" /> as a <see cref="IServiceProvider" /> and vice-versa.
     ///     </para>
     /// </remarks>
+    /// <preliminary />
     /// <threadsafety static="false" instance="false" />
     /// TODO: Make thread-safe
+    /// TODO: Code example
     public class DependencyResolverWrapper : IDependencyResolver, IServiceProvider
     {
         #region Instance Constructor/Destructor

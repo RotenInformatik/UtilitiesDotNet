@@ -53,7 +53,7 @@ namespace RI.Utilities.Paths
     /// var gameDir  = gamePath.Directory;                       // C:\Program Files (x86)\Steam\steamapps\common\MyGame
     /// var modDir   = modPath.Directory;                        // C:\Program Files (x86)\Steam\steamapps\common\MyGame\data\mods
     /// var otherDir = gameDir.AppendDirectory("other", "dir");  // C:\Program Files (x86)\Steam\steamapps\common\MyGame\other\dir
-    /// var modRel   = modDir.MakeRelativeTo(otherDir);          // ..\..\other\dir
+    /// var modRel   = modDir.MakeRelativeTo(otherDir);          // ..\..\data\mods
     /// ]]>
     /// </code>
     /// </example>

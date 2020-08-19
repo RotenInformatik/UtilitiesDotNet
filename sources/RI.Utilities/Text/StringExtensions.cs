@@ -22,6 +22,7 @@ namespace RI.Utilities.Text
     ///         Note that some of the functionality provided by this class is rather specialized and intended to be used for certain string parsing/processing purposes.
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     public static class StringExtensions
     {
         #region Constants

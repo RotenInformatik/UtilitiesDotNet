@@ -15,6 +15,7 @@ namespace RI.Utilities.Reflection
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Assembly" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class AssemblyExtensions
     {
         #region Static Methods

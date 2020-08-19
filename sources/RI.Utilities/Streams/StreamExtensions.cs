@@ -11,6 +11,7 @@ namespace RI.Utilities.Streams
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Stream" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class StreamExtensions
     {
         #region Constants

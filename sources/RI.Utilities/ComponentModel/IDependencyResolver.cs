@@ -11,6 +11,7 @@ namespace RI.Utilities.ComponentModel
     /// <summary>
     ///     Defines the interface for a dependency resolver which can be used to obtain instances of required types.
     /// </summary>
+    /// <preliminary />
     public interface IDependencyResolver
     {
         /// <summary>
