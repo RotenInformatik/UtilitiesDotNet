@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="5c749026-ca14-482c-9e6c-4f30f8c7cc08" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        <externalLink>
+          <linkText>Documentation</linkText>
+          <linkUri>https://roteninformatik.github.io/UtilitiesDotNet/</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+      </para>
+      <para>
+        <externalLink>
+          <linkText>Code</linkText>
+          <linkUri>https://github.com/RotenInformatik/UtilitiesDotNet</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+      </para>
+      <para>
+        <externalLink>
+          <linkText>NuGet package</linkText>
+          <linkUri>https://www.nuget.org/packages/RI.Utilities/</linkUri>
+          <linkTarget>_self</linkTarget>
+        </externalLink>
+      </para>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

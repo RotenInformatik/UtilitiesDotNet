@@ -6,29 +6,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>Properties/RI.Utilities.xml</DocumentationFile>
+    <AssemblyName>RI.Utilities</AssemblyName>
+    <RootNamespace>RI.Utilities</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
-    <AssemblyName>RI.Utilities</AssemblyName>
-    <RootNamespace>RI.Utilities</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/RotenInformatik/UtilitiesDotNet</PackageProjectUrl>
-    <Authors>Andreas Roten</Authors>
-    <Copyright>Copyright (c) 2011-2020 Roten Informatik</Copyright>
+    <NuspecFile>package.nuspec</NuspecFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,6 +32,10 @@
     <None Update="Numbers\NumberExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumberExtensions.tt.cs</LastGenOutput>
+    </None>
+    <None Include="..\..\ICON.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 

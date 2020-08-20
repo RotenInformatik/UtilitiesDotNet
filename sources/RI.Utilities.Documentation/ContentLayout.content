@@ -1,2 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Topics />
+<Topics>
+  <Topic id="5c749026-ca14-482c-9e6c-4f30f8c7cc08" visible="True" isDefault="true" isSelected="true" title="API reference" />
+</Topics>

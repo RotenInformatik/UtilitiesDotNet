@@ -166,6 +166,9 @@
   <ItemGroup>
     <ResourceItems Include="Resource Items.items" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Start.aml" />
+  </ItemGroup>
   <!-- Import the SHFB build targets -->
   <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
   <!-- The pre-build and post-build event properties must appear *after* the targets file import in order to be
