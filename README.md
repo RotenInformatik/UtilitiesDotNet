@@ -8,4 +8,4 @@ Licensed under [Apache 2.0](LICENSE).
 
 [Documentation](https://roteninformatik.github.io/UtilitiesDotNet/)
 
-[TODO: NuGet package]()
+[NuGet package](https://www.nuget.org/packages/RI.Utilities/)

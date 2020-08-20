@@ -1,4 +1,4 @@
-**RI.Utilities 1.0.0**   -   [Overview](https://roteninformatik.github.io/UtilitiesDotNet/) - [Assemblies](assemblies.html) - [Version history](versionhistory.html) - [API reference](https://roteninformatik.github.io/UtilitiesDotNet/api/) - [TODO: NuGet package]() - [Code](https://github.com/RotenInformatik/UtilitiesDotNet)
+**RI.Utilities**   -   [Overview](https://roteninformatik.github.io/UtilitiesDotNet/) - [Assemblies](assemblies.html) - [Version history](versionhistory.html) - [API reference](https://roteninformatik.github.io/UtilitiesDotNet/api/) - [NuGet package](https://www.nuget.org/packages/RI.Utilities/) - [Code](https://github.com/RotenInformatik/UtilitiesDotNet)
 
 ------
 
@@ -12,5 +12,5 @@ It is licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 [Documentation](https://roteninformatik.github.io/UtilitiesDotNet/) and [API reference](https://roteninformatik.github.io/UtilitiesDotNet/api/) are available.
 
-The compiled library can be obtained using a [TODO: NuGet package]() (`TODO: RI.Utilities`).
+The compiled library can be obtained using the corresponding [NuGet package](https://www.nuget.org/packages/RI.Utilities/) (`RI.Utilities`).
 
