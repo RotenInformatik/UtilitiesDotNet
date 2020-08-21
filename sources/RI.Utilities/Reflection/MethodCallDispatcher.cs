@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 
 using RI.Utilities.Collections;
-using RI.Utilities.ComponentModel;
 using RI.Utilities.Exceptions;
 using RI.Utilities.Text;
 
@@ -305,7 +304,7 @@ namespace RI.Utilities.Reflection
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="parameter" /> or <paramref name="parameterResolver" /> is null. </exception>
-        public object Dispatch (object parameter, IDependencyResolver parameterResolver)
+        public object Dispatch (object parameter, IServiceProvider parameterResolver)
         {
             if (parameter == null)
             {
@@ -317,7 +316,7 @@ namespace RI.Utilities.Reflection
                 throw new ArgumentNullException(nameof(parameterResolver));
             }
 
-            this.DispatchInternal(parameter, out object returnValue, (name, type) => parameterResolver.GetInstance(type) ?? parameterResolver.GetInstance(name));
+            this.DispatchInternal(parameter, out object returnValue, (name, type) => parameterResolver.GetService(type));
             return returnValue;
         }
 
@@ -393,7 +392,7 @@ namespace RI.Utilities.Reflection
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="parameter" /> or <paramref name="parameterResolver" /> is null. </exception>
-        public bool Dispatch (object parameter, out object returnValue, IDependencyResolver parameterResolver)
+        public bool Dispatch (object parameter, out object returnValue, IServiceProvider parameterResolver)
         {
             if (parameter == null)
             {
@@ -405,7 +404,7 @@ namespace RI.Utilities.Reflection
                 throw new ArgumentNullException(nameof(parameterResolver));
             }
 
-            return this.DispatchInternal(parameter, out returnValue, (name, type) => parameterResolver.GetInstance(type) ?? parameterResolver.GetInstance(name));
+            return this.DispatchInternal(parameter, out returnValue, (name, type) => parameterResolver.GetService(type));
         }
 
         /// <summary>

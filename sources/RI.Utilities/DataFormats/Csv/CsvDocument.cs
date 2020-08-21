@@ -90,6 +90,7 @@ namespace RI.Utilities.DataFormats.Csv
     /// ]]>
     /// </code>
     /// </example>
+    /// TODO: Implement ICopyable
     public sealed class CsvDocument : ICloneable, ICloneable<CsvDocument>
     {
         #region Instance Constructor/Destructor

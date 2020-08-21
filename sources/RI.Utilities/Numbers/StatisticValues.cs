@@ -20,6 +20,8 @@ namespace RI.Utilities.Numbers
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
     /// TODO: Implement IEquatable and override GetHashCode and Equals
+    /// TODO: Implement IEquatable
+    /// TODO: Implement ICopyable (???)
     /// TODO: SortedTimesteps
     /// TODO: Code example
     [Serializable,]

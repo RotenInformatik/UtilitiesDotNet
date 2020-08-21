@@ -34,6 +34,8 @@ namespace RI.Utilities.Numbers
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
+    /// TODO: Implement IEquatable
+    /// TODO: Make serializable
     /// TODO: Constructor with single initial timestep (equal to StatisticValues)
     /// TODO: GeometricMean?
     /// TODO: HarmonicMean?

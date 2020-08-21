@@ -23,6 +23,7 @@ namespace RI.Utilities.Collections.Generic
     ///     </para>
     /// </remarks>
     /// TODO: Add support for IPriorityQueueAware
+    /// TODO: Implement ICopyable
     public interface IPriorityQueue <T> : ICollection, IEnumerable<T>, IEnumerable
     {
         /// <summary>

@@ -52,6 +52,7 @@ namespace RI.Utilities.Text
     /// TODO: Implement IEquatable
     /// TODO: Implement IComparable
     /// TODO: Implement IFormattable
+    /// TODO: Implement ICopyable
     /// TODO: Make serializable
     public sealed class CommandLine : ICloneable<CommandLine>, ICloneable
     {
