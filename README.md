@@ -6,7 +6,7 @@
 
 Assorted utilities and extensions for .NET.
 
-Single assembly, based on .NET Standard 2.1, with no additional dependencies.
+Single assembly, based on .NET Standard 2.0, with no additional dependencies.
 
 ---
 
