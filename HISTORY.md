@@ -12,6 +12,8 @@
 * [#15: Move IDependencyResolver to abstraction project](https://github.com/RotenInformatik/UtilitiesDotNet/issues/15)
 * [#16: Switch to .NET Standard 2.0](https://github.com/RotenInformatik/UtilitiesDotNet/issues/16)
 * [#17: Add overload with options for XmlDocument and XDocument conversion extensions](https://github.com/RotenInformatik/UtilitiesDotNet/issues/17)
+* [#18: Add SortedTimesteps field to StatisticValues](https://github.com/RotenInformatik/UtilitiesDotNet/issues/18)
+* [#19: Add constructor with fixed timestep to RunningValues](https://github.com/RotenInformatik/UtilitiesDotNet/issues/19)
 * Misc. minor documentation improvements
 
 ## 1.0.0

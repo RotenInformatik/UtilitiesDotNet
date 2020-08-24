@@ -367,6 +367,7 @@
   <HelpKINode Title="CommandLine.Build method" Url="html/M_RI_Utilities_Text_CommandLine_Build.htm" />
   <HelpKINode Title="CommandLine.Clone method" Url="html/M_RI_Utilities_Text_CommandLine_Clone.htm" />
   <HelpKINode Title="CommandLine.CommandLine constructor" Url="html/Overload_RI_Utilities_Text_CommandLine__ctor.htm" />
+  <HelpKINode Title="CommandLine.CopyTo method" Url="html/M_RI_Utilities_Text_CommandLine_CopyTo.htm" />
   <HelpKINode Title="CommandLine.DefaultParameterNameComparer field" Url="html/F_RI_Utilities_Text_CommandLine_DefaultParameterNameComparer.htm" />
   <HelpKINode Title="CommandLine.Executable property" Url="html/P_RI_Utilities_Text_CommandLine_Executable.htm" />
   <HelpKINode Title="CommandLine.FromCurrentProcess method" Url="html/Overload_RI_Utilities_Text_CommandLine_FromCurrentProcess.htm" />
@@ -429,8 +430,11 @@
   <HelpKINode Title="ContainsWhitespace method" Url="html/M_RI_Utilities_Text_StringExtensions_ContainsWhitespace.htm" />
   <HelpKINode Title="Copy method" Url="html/Overload_RI_Utilities_Paths_FilePath_Copy.htm" />
   <HelpKINode Title="CopyTo method">
+    <HelpKINode Title="CommandLine.CopyTo Method " Url="html/M_RI_Utilities_Text_CommandLine_CopyTo.htm" />
+    <HelpKINode Title="CsvDocument.CopyTo Method " Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument_CopyTo.htm" />
     <HelpKINode Title="ICopyable(T).CopyTo Method " Url="html/M_RI_Utilities_ObjectModel_ICopyable_1_CopyTo.htm" />
-    <HelpKINode Title="PriorityQueue(T).CopyTo Method " Url="html/M_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
+    <HelpKINode Title="IniDocument.CopyTo Method " Url="html/M_RI_Utilities_DataFormats_Ini_IniDocument_CopyTo.htm" />
+    <HelpKINode Title="PriorityQueue(T).CopyTo Method " Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
     <HelpKINode Title="VirtualizationCollection(T).CopyTo Method " Url="html/M_RI_Utilities_Collections_Virtualization_VirtualizationCollection_1_CopyTo.htm" />
   </HelpKINode>
   <HelpKINode Title="Cos method" Url="html/Overload_RI_Utilities_Numbers_NumberExtensions_Cos.htm" />
@@ -465,6 +469,7 @@
   <HelpKINode Title="CsvDocument.AsString method" Url="html/Overload_RI_Utilities_DataFormats_Csv_CsvDocument_AsString.htm" />
   <HelpKINode Title="CsvDocument.Clear method" Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument_Clear.htm" />
   <HelpKINode Title="CsvDocument.Clone method" Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument_Clone.htm" />
+  <HelpKINode Title="CsvDocument.CopyTo method" Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument_CopyTo.htm" />
   <HelpKINode Title="CsvDocument.CsvDocument constructor" Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument__ctor.htm" />
   <HelpKINode Title="CsvDocument.Data property" Url="html/P_RI_Utilities_DataFormats_Csv_CsvDocument_Data.htm" />
   <HelpKINode Title="CsvDocument.ICloneable.Clone explicitly implemented method" Url="html/M_RI_Utilities_DataFormats_Csv_CsvDocument_System_ICloneable_Clone.htm" />
@@ -775,6 +780,7 @@
     <HelpKINode Title="PathProperties.Equals Method " Url="html/Overload_RI_Utilities_Paths_PathProperties_Equals.htm" />
     <HelpKINode Title="PathString.Equals Method " Url="html/Overload_RI_Utilities_Paths_PathString_Equals.htm" />
     <HelpKINode Title="RomanNumber.Equals Method " Url="html/Overload_RI_Utilities_Numbers_RomanNumber_Equals.htm" />
+    <HelpKINode Title="StatisticValues.Equals Method " Url="html/Overload_RI_Utilities_Numbers_StatisticValues_Equals.htm" />
   </HelpKINode>
   <HelpKINode Title="EqualsLanguage method" Url="html/M_RI_Utilities_Globalization_CultureInfoExtensions_EqualsLanguage.htm" />
   <HelpKINode Title="Error property" Url="html/P_RI_Utilities_Paths_PathProperties_Error.htm" />
@@ -938,6 +944,7 @@
     <HelpKINode Title="PathProperties.GetHashCode Method " Url="html/M_RI_Utilities_Paths_PathProperties_GetHashCode.htm" />
     <HelpKINode Title="PathString.GetHashCode Method " Url="html/M_RI_Utilities_Paths_PathString_GetHashCode.htm" />
     <HelpKINode Title="RomanNumber.GetHashCode Method " Url="html/M_RI_Utilities_Numbers_RomanNumber_GetHashCode.htm" />
+    <HelpKINode Title="StatisticValues.GetHashCode Method " Url="html/M_RI_Utilities_Numbers_StatisticValues_GetHashCode.htm" />
   </HelpKINode>
   <HelpKINode Title="GetHistory method" Url="html/M_RI_Utilities_Numbers_RunningValues_GetHistory.htm" />
   <HelpKINode Title="GetIndexOrDefault method" Url="html/Overload_RI_Utilities_Collections_IListExtensions_GetIndexOrDefault.htm" />
@@ -1323,6 +1330,7 @@
   <HelpKINode Title="IniDocument.AsString method" Url="html/Overload_RI_Utilities_DataFormats_Ini_IniDocument_AsString.htm" />
   <HelpKINode Title="IniDocument.Clear method" Url="html/M_RI_Utilities_DataFormats_Ini_IniDocument_Clear.htm" />
   <HelpKINode Title="IniDocument.Clone method" Url="html/M_RI_Utilities_DataFormats_Ini_IniDocument_Clone.htm" />
+  <HelpKINode Title="IniDocument.CopyTo method" Url="html/M_RI_Utilities_DataFormats_Ini_IniDocument_CopyTo.htm" />
   <HelpKINode Title="IniDocument.Count property" Url="html/P_RI_Utilities_DataFormats_Ini_IniDocument_Count.htm" />
   <HelpKINode Title="IniDocument.DeleteValue method" Url="html/M_RI_Utilities_DataFormats_Ini_IniDocument_DeleteValue.htm" />
   <HelpKINode Title="IniDocument.Elements property" Url="html/P_RI_Utilities_DataFormats_Ini_IniDocument_Elements.htm" />
@@ -2290,7 +2298,7 @@
     <HelpKINode Title="properties" Url="html/Properties_T_RI_Utilities_Collections_Generic_PriorityQueue_1.htm" />
   </HelpKINode>
   <HelpKINode Title="PriorityQueue(Of T).Clear method" Url="html/M_RI_Utilities_Collections_Generic_PriorityQueue_1_Clear.htm" />
-  <HelpKINode Title="PriorityQueue(Of T).CopyTo method" Url="html/M_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
+  <HelpKINode Title="PriorityQueue(Of T).CopyTo method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
   <HelpKINode Title="PriorityQueue(Of T).Count property" Url="html/P_RI_Utilities_Collections_Generic_PriorityQueue_1_Count.htm" />
   <HelpKINode Title="PriorityQueue(Of T).Dequeue method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_Dequeue.htm" />
   <HelpKINode Title="PriorityQueue(Of T).Enqueue method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_Enqueue.htm" />
@@ -2313,7 +2321,7 @@
     <HelpKINode Title="properties" Url="html/Properties_T_RI_Utilities_Collections_Generic_PriorityQueue_1.htm" />
   </HelpKINode>
   <HelpKINode Title="PriorityQueue&lt;T&gt;.Clear method" Url="html/M_RI_Utilities_Collections_Generic_PriorityQueue_1_Clear.htm" />
-  <HelpKINode Title="PriorityQueue&lt;T&gt;.CopyTo method" Url="html/M_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
+  <HelpKINode Title="PriorityQueue&lt;T&gt;.CopyTo method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_CopyTo.htm" />
   <HelpKINode Title="PriorityQueue&lt;T&gt;.Count property" Url="html/P_RI_Utilities_Collections_Generic_PriorityQueue_1_Count.htm" />
   <HelpKINode Title="PriorityQueue&lt;T&gt;.Dequeue method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_Dequeue.htm" />
   <HelpKINode Title="PriorityQueue&lt;T&gt;.Enqueue method" Url="html/Overload_RI_Utilities_Collections_Generic_PriorityQueue_1_Enqueue.htm" />
@@ -3040,6 +3048,7 @@
   <HelpKINode Title="Sinh method" Url="html/Overload_RI_Utilities_Numbers_NumberExtensions_Sinh.htm" />
   <HelpKINode Title="Size property" Url="html/P_RI_Utilities_Paths_FilePath_Size.htm" />
   <HelpKINode Title="Sort method" Url="html/Overload_RI_Utilities_Collections_IListExtensions_Sort.htm" />
+  <HelpKINode Title="SortedTimesteps field" Url="html/F_RI_Utilities_Numbers_StatisticValues_SortedTimesteps.htm" />
   <HelpKINode Title="SortedValues field" Url="html/F_RI_Utilities_Numbers_StatisticValues_SortedValues.htm" />
   <HelpKINode Title="SortElements method" Url="html/Overload_RI_Utilities_DataFormats_Ini_IniDocument_SortElements.htm" />
   <HelpKINode Title="SortSections method" Url="html/Overload_RI_Utilities_DataFormats_Ini_IniDocument_SortSections.htm" />
@@ -3079,7 +3088,9 @@
   <HelpKINode Title="StatisticValues.Clone method" Url="html/M_RI_Utilities_Numbers_StatisticValues_Clone.htm" />
   <HelpKINode Title="StatisticValues.Count field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Count.htm" />
   <HelpKINode Title="StatisticValues.Duration field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Duration.htm" />
+  <HelpKINode Title="StatisticValues.Equals method" Url="html/Overload_RI_Utilities_Numbers_StatisticValues_Equals.htm" />
   <HelpKINode Title="StatisticValues.GeometricMean field" Url="html/F_RI_Utilities_Numbers_StatisticValues_GeometricMean.htm" />
+  <HelpKINode Title="StatisticValues.GetHashCode method" Url="html/M_RI_Utilities_Numbers_StatisticValues_GetHashCode.htm" />
   <HelpKINode Title="StatisticValues.HarmonicMean field" Url="html/F_RI_Utilities_Numbers_StatisticValues_HarmonicMean.htm" />
   <HelpKINode Title="StatisticValues.ICloneable.Clone explicitly implemented method" Url="html/M_RI_Utilities_Numbers_StatisticValues_System_ICloneable_Clone.htm" />
   <HelpKINode Title="StatisticValues.Max field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Max.htm" />
@@ -3088,6 +3099,7 @@
   <HelpKINode Title="StatisticValues.Product field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Product.htm" />
   <HelpKINode Title="StatisticValues.Rms field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Rms.htm" />
   <HelpKINode Title="StatisticValues.Sigma field" Url="html/F_RI_Utilities_Numbers_StatisticValues_Sigma.htm" />
+  <HelpKINode Title="StatisticValues.SortedTimesteps field" Url="html/F_RI_Utilities_Numbers_StatisticValues_SortedTimesteps.htm" />
   <HelpKINode Title="StatisticValues.SortedValues field" Url="html/F_RI_Utilities_Numbers_StatisticValues_SortedValues.htm" />
   <HelpKINode Title="StatisticValues.SquareSum field" Url="html/F_RI_Utilities_Numbers_StatisticValues_SquareSum.htm" />
   <HelpKINode Title="StatisticValues.StatisticValues constructor" Url="html/Overload_RI_Utilities_Numbers_StatisticValues__ctor.htm" />
@@ -3351,8 +3363,8 @@
   <HelpKINode Title="ToUInt64 method" Url="html/Overload_RI_Utilities_Text_StringExtensions_ToUInt64.htm" />
   <HelpKINode Title="ToUInt64Invariant method" Url="html/M_RI_Utilities_Text_StringExtensions_ToUInt64Invariant.htm" />
   <HelpKINode Title="ToVersion method" Url="html/M_RI_Utilities_Text_StringExtensions_ToVersion.htm" />
-  <HelpKINode Title="ToXDocument method" Url="html/M_RI_Utilities_Xml_XmlDocumentExtensions_ToXDocument.htm" />
-  <HelpKINode Title="ToXmlDocument method" Url="html/M_RI_Utilities_Xml_XDocumentExtensions_ToXmlDocument.htm" />
+  <HelpKINode Title="ToXDocument method" Url="html/Overload_RI_Utilities_Xml_XmlDocumentExtensions_ToXDocument.htm" />
+  <HelpKINode Title="ToXmlDocument method" Url="html/Overload_RI_Utilities_Xml_XDocumentExtensions_ToXmlDocument.htm" />
   <HelpKINode Title="Transform method" Url="html/Overload_RI_Utilities_Collections_IListExtensions_Transform.htm" />
   <HelpKINode Title="Transform(Of TKey, TValue) method" Url="html/M_RI_Utilities_Collections_IDictionaryExtensions_Transform__2.htm" />
   <HelpKINode Title="Transform&lt;TKey, TValue&gt; method" Url="html/M_RI_Utilities_Collections_IDictionaryExtensions_Transform__2.htm" />
@@ -3603,10 +3615,10 @@
     <HelpKINode Title="XDocumentExtensions Class" Url="html/T_RI_Utilities_Xml_XDocumentExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_RI_Utilities_Xml_XDocumentExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="XDocumentExtensions.ToXmlDocument method" Url="html/M_RI_Utilities_Xml_XDocumentExtensions_ToXmlDocument.htm" />
+  <HelpKINode Title="XDocumentExtensions.ToXmlDocument method" Url="html/Overload_RI_Utilities_Xml_XDocumentExtensions_ToXmlDocument.htm" />
   <HelpKINode Title="XmlDocumentExtensions class">
     <HelpKINode Title="XmlDocumentExtensions Class" Url="html/T_RI_Utilities_Xml_XmlDocumentExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_RI_Utilities_Xml_XmlDocumentExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="XmlDocumentExtensions.ToXDocument method" Url="html/M_RI_Utilities_Xml_XmlDocumentExtensions_ToXDocument.htm" />
+  <HelpKINode Title="XmlDocumentExtensions.ToXDocument method" Url="html/Overload_RI_Utilities_Xml_XmlDocumentExtensions_ToXDocument.htm" />
 </HelpKI>
