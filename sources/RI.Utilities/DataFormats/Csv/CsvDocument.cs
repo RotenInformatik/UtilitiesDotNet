@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 using RI.Utilities.Collections;
@@ -90,7 +91,7 @@ namespace RI.Utilities.DataFormats.Csv
     /// ]]>
     /// </code>
     /// </example>
-    public sealed class CsvDocument : ICloneable, ICloneable<CsvDocument>
+    public sealed class CsvDocument : ICloneable, ICloneable<CsvDocument>, ICopyable<CsvDocument>
     {
         #region Instance Constructor/Destructor
 
@@ -449,5 +450,19 @@ namespace RI.Utilities.DataFormats.Csv
         }
 
         #endregion
+
+
+
+
+        /// <inheritdoc />
+        public void CopyTo (CsvDocument other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            other.Data.AddRange(this.Data.Select(x => new List<string>(x)));
+        }
     }
 }

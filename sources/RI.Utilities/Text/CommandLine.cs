@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
+using RI.Utilities.Collections;
 using RI.Utilities.ObjectModel;
 
 
@@ -48,12 +49,8 @@ namespace RI.Utilities.Text
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Code example
-    /// TODO: Implement IEquatable
-    /// TODO: Implement IComparable
-    /// TODO: Implement IFormattable
-    /// TODO: Make serializable
-    public sealed class CommandLine : ICloneable<CommandLine>, ICloneable
+    [Serializable,]
+    public sealed class CommandLine : ICloneable<CommandLine>, ICloneable, ICopyable<CommandLine>
     {
         #region Constants
 
@@ -615,6 +612,30 @@ namespace RI.Utilities.Text
         object ICloneable.Clone ()
         {
             return this.Clone();
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICopyable<CommandLine>
+
+        /// <inheritdoc />
+        public void CopyTo (CommandLine other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            other.Executable = this.Executable;
+
+            other.Literals.Clear();
+            other.Literals.AddRange(this.Literals);
+
+            other.Parameters.Clear();
+            other.Parameters.AddRange(this.Parameters.Select(x => new KeyValuePair<string, List<string>>(x.Key, new List<string>(x.Value))));
         }
 
         #endregion

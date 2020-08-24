@@ -17,6 +17,8 @@ namespace RI.Utilities.DataFormats.Ini.Elements
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
+    /// TODO: Implement ICopyable
+    /// TODO: Implement ICloneable
     public sealed class SectionIniElement : IniElement
     {
         #region Instance Constructor/Destructor

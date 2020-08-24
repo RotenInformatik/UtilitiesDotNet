@@ -30,6 +30,11 @@
       <Argument Key="baseSourceCodeUrl" Value="" />
       <Argument Key="requestExampleUrl" Value="" />
     </TransformComponentArguments>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\RI.Utilities\RI.Utilities.csproj" xmlns="" />
+	  
+	  
+    </DocumentationSources>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -118,19 +123,15 @@
     </ComponentConfigurations>
     <PlugInConfigurations />
     <HelpTitle>RI.Utilities</HelpTitle>
-    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <HelpFileVersion>1.1.0.0</HelpFileVersion>
     <NamingMethod>MemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <RootNamespaceContainer>False</RootNamespaceContainer>
-    <RootNamespaceTitle>
-    </RootNamespaceTitle>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <RootNamespaceTitle>Namespaces</RootNamespaceTitle>
     <NamespaceGrouping>False</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
     <SdkLinkTarget>Blank</SdkLinkTarget>
-    <DocumentationSources>
-      <DocumentationSource sourceFile="..\RI.Utilities\RI.Utilities.csproj" xmlns="" />
-    </DocumentationSources>
     <WarnOnMissingSourceContext>False</WarnOnMissingSourceContext>
     <HeaderText>
     </HeaderText>
@@ -164,9 +165,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ResourceItems Include="Resource Items.items" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Assemblies.aml" />
     <None Include="Start.aml" />
   </ItemGroup>
   <!-- Import the SHFB build targets -->

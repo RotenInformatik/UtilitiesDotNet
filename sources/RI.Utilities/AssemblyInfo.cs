@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("RI.Utilities"),]
 [assembly: AssemblyDescription("Assorted utilities and extensions for .NET"),]
-[assembly: Guid("D2FF2609-DB2D-4696-93C4-85C3E5AF03E9"),]
+[assembly: Guid("D61215F8-02EC-443E-B3D9-61E29752860F"),]
 
 [assembly: AssemblyProduct("RotenInformatik/UtilitiesDotNet"),]
 [assembly: AssemblyCompany("Roten Informatik"),]
@@ -15,9 +15,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark(""),]
 [assembly: AssemblyCulture(""),]
 [assembly: CLSCompliant(true),]
-[assembly: AssemblyVersion("1.0.0.0"),]
-[assembly: AssemblyFileVersion("1.0.0.0"),]
-[assembly: AssemblyInformationalVersion("1.0.0.0"),]
+[assembly: AssemblyVersion("1.1.0.0"),]
+[assembly: AssemblyFileVersion("1.1.0.0"),]
+[assembly: AssemblyInformationalVersion("1.1.0.0"),]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("DEBUG"),]

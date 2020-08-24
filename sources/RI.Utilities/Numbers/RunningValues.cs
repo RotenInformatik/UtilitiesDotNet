@@ -34,7 +34,6 @@ namespace RI.Utilities.Numbers
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Constructor with single initial timestep (equal to StatisticValues)
     /// TODO: GeometricMean?
     /// TODO: HarmonicMean?
     /// TODO: Max?
@@ -57,6 +56,7 @@ namespace RI.Utilities.Numbers
     /// ]]>
     /// </code>
     /// </example>
+    [Serializable,]
     public sealed class RunningValues : ICloneable<RunningValues>, ICloneable
     {
         #region Instance Constructor/Destructor
@@ -116,6 +116,57 @@ namespace RI.Utilities.Numbers
                 }
 
                 this.Add(value);
+            }
+        }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="RunningValues" />.
+        /// </summary>
+        /// <param name="initialValues"> The initial values added to the history. </param>
+        /// <param name="fixedTimestep"> The fixed timestep which is used for each value. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The capacity is set to the number of values in <paramref name="initialValues" />.
+        ///         Therefore, the sequence must contain at least one value.
+        ///     </para>
+        ///     <para>
+        ///         <paramref name="initialValues" /> is enumerated only once.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="initialValues" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="initialValues" /> is an empty sequence. </exception>
+        /// <exception cref="NotFiniteArgumentException"> <paramref name="initialValues" /> contains one or more NaN or infinity value or <paramref name="fixedTimestep" /> is NaN or infinity. </exception>
+        public RunningValues (IEnumerable<float> initialValues, float fixedTimestep)
+        {
+            if (initialValues == null)
+            {
+                throw new ArgumentNullException(nameof(initialValues));
+            }
+
+            if (fixedTimestep.IsNanOrInfinity())
+            {
+                throw new NotFiniteArgumentException(nameof(fixedTimestep));
+            }
+
+            List<float> values = initialValues.ToList();
+
+            if (values.Count == 0)
+            {
+                throw new ArgumentException("The sequence of intial values is empty.", nameof(initialValues));
+            }
+
+            this.Reset(values.Count);
+
+            for (int i1 = 0; i1 < values.Count; i1++)
+            {
+                float value = values[i1];
+
+                if (value.IsNanOrInfinity())
+                {
+                    throw new NotFiniteArgumentException(nameof(initialValues));
+                }
+
+                this.Add(value, fixedTimestep);
             }
         }
 
@@ -232,6 +283,53 @@ namespace RI.Utilities.Numbers
                 }
 
                 this.Add(value);
+            }
+        }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="RunningValues" />.
+        /// </summary>
+        /// <param name="capacity"> The capacity of the history used to calculate the running values. </param>
+        /// <param name="initialValues"> The initial values added to the history. </param>
+        /// <param name="fixedTimestep"> The fixed timestep which is used for each value. </param>
+        /// <remarks>
+        ///     <para>
+        ///         <paramref name="initialValues" /> is enumerated only once.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentOutOfRangeException"> <paramref name="capacity" /> is less than 1. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="initialValues" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="initialValues" /> is an empty sequence. </exception>
+        /// <exception cref="NotFiniteArgumentException"> <paramref name="initialValues" /> contains one or more NaN or infinity value or <paramref name="fixedTimestep" /> is NaN or infinity. </exception>
+        public RunningValues (int capacity, IEnumerable<float> initialValues, float fixedTimestep)
+        {
+            if (initialValues == null)
+            {
+                throw new ArgumentNullException(nameof(initialValues));
+            }
+
+            if (fixedTimestep.IsNanOrInfinity())
+            {
+                throw new NotFiniteArgumentException(nameof(fixedTimestep));
+            }
+
+            List<float> values = initialValues.ToList();
+
+            if (values.Count == 0)
+            {
+                throw new ArgumentException("The sequence of intial values is empty.", nameof(initialValues));
+            }
+
+            this.Reset(capacity);
+
+            foreach (float value in values)
+            {
+                if (value.IsNanOrInfinity())
+                {
+                    throw new NotFiniteArgumentException(nameof(initialValues));
+                }
+
+                this.Add(value, fixedTimestep);
             }
         }
 

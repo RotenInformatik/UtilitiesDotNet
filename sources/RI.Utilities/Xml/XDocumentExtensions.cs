@@ -21,7 +21,6 @@ namespace RI.Utilities.Xml
         /// <param name="xDocument"> The <see cref="XDocument" /> to convert. </param>
         /// <returns> The converted <see cref="XmlDocument" />. </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="xDocument" /> is null. </exception>
-        /// TODO: Add overload with ReadOptions
         public static XmlDocument ToXmlDocument (this XDocument xDocument)
         {
             if (xDocument == null)
@@ -32,6 +31,30 @@ namespace RI.Utilities.Xml
             XmlDocument xmlDocument = new XmlDocument();
 
             using (XmlReader xmlReader = xDocument.CreateReader())
+            {
+                xmlDocument.Load(xmlReader);
+            }
+
+            return xmlDocument;
+        }
+
+        /// <summary>
+        ///     Converts a <see cref="XDocument" /> to a <see cref="XmlDocument" />.
+        /// </summary>
+        /// <param name="xDocument"> The <see cref="XDocument" /> to convert. </param>
+        /// <param name="options"> The <see cref="ReaderOptions" /> used. </param>
+        /// <returns> The converted <see cref="XmlDocument" />. </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="xDocument" /> is null. </exception>
+        public static XmlDocument ToXmlDocument (this XDocument xDocument, ReaderOptions options)
+        {
+            if (xDocument == null)
+            {
+                throw new ArgumentNullException(nameof(xDocument));
+            }
+
+            XmlDocument xmlDocument = new XmlDocument();
+
+            using (XmlReader xmlReader = xDocument.CreateReader(options))
             {
                 xmlDocument.Load(xmlReader);
             }

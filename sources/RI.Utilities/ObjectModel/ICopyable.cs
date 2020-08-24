@@ -1,4 +1,9 @@
-﻿namespace RI.Utilities.ObjectModel
+﻿using System;
+
+
+
+
+namespace RI.Utilities.ObjectModel
 {
     /// <summary>
     ///     Defines an interface to implement copying of an object to another of the same type.
@@ -15,6 +20,7 @@
         ///         Whether it is a deep or shallow copy depends on the implementing type and its context.
         ///     </note>
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is null.</exception>
         void CopyTo (T other);
     }
 }

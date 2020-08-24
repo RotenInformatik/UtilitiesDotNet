@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="038214fd-353e-4e3f-a147-e571417691ca" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <table>
+        <tableHeader>
+          <row>
+            <entry>
+              <para>Assembly</para>
+            </entry>
+            <entry>
+              <para>Target</para>
+            </entry>
+            <entry>
+              <para>Platform</para>
+            </entry>
+            <entry>
+              <para>Dependencies</para>
+            </entry>
+            <entry>
+              <para>NuGet</para>
+            </entry>
+          </row>
+        </tableHeader>
+        <row>
+          <entry>
+            <para>RI.Utilities.dll</para>
+          </entry>
+          <entry>
+            <para>.NET Standard 2.0</para>
+          </entry>
+          <entry>
+            <para>AnyCpu</para>
+          </entry>
+          <entry>
+            <para>
+              <legacyItalic>none</legacyItalic>
+            </para>
+          </entry>
+          <entry>
+            <para>
+              <externalLink>
+                <linkText>RI.Utilities</linkText>
+                <linkUri>https://www.nuget.org/packages/RI.Utilities/</linkUri>
+                <linkTarget>_self</linkTarget>
+              </externalLink>
+            </para>
+          </entry>
+        </row>
+      </table>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

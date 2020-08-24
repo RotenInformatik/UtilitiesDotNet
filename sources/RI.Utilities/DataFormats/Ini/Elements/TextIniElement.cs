@@ -12,6 +12,8 @@
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
+    /// TODO: Implement ICopyable
+    /// TODO: Implement ICloneable
     public sealed class TextIniElement : IniElement
     {
         #region Instance Constructor/Destructor

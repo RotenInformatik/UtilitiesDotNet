@@ -19,11 +19,9 @@ namespace RI.Utilities.Numbers
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Implement IEquatable and override GetHashCode and Equals
-    /// TODO: SortedTimesteps
     /// TODO: Code example
     [Serializable,]
-    public struct StatisticValues : ICloneable<StatisticValues>, ICloneable
+    public struct StatisticValues : ICloneable<StatisticValues>, ICloneable, IEquatable<StatisticValues>
     {
         #region Instance Constructor/Destructor
 
@@ -176,6 +174,9 @@ namespace RI.Utilities.Numbers
             this.SortedValues = (double[])this.Values.Clone();
             Array.Sort(this.SortedValues);
 
+            this.SortedTimesteps = (double[])this.Timesteps.Clone();
+            Array.Sort(this.SortedTimesteps);
+
             this.WeightedSortedValues = (double[])this.WeightedValues.Clone();
             Array.Sort(this.WeightedSortedValues);
 
@@ -309,6 +310,11 @@ namespace RI.Utilities.Numbers
         public readonly double Sigma;
 
         /// <summary>
+        ///     All timesteps, sorted by their numeric value.
+        /// </summary>
+        public readonly double[] SortedTimesteps;
+
+        /// <summary>
         ///     All values, sorted by their numeric value.
         /// </summary>
         public readonly double[] SortedValues;
@@ -353,6 +359,25 @@ namespace RI.Utilities.Numbers
 
 
 
+        #region Overrides
+
+        /// <inheritdoc />
+        public override bool Equals (object obj)
+        {
+            return (obj != null) && this.Equals((StatisticValues)obj);
+        }
+
+        /// <inheritdoc />
+        public override int GetHashCode ()
+        {
+            return unchecked((int)(this.Timesteps.Sum() + this.Values.Sum()));
+        }
+
+        #endregion
+
+
+
+
         #region Interface: ICloneable<StatisticValues>
 
         /// <inheritdoc />
@@ -365,6 +390,40 @@ namespace RI.Utilities.Numbers
         object ICloneable.Clone ()
         {
             return this.Clone();
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: IEquatable<StatisticValues>
+
+        /// <inheritdoc />
+        public bool Equals (StatisticValues other)
+        {
+            if ((other.Timesteps.Length != this.Timesteps.Length) || (other.Values.Length != this.Values.Length))
+            {
+                return false;
+            }
+
+            for (int i1 = 0; i1 < this.Timesteps.Length; i1++)
+            {
+                if (Math.Abs(other.Timesteps[i1] - this.Timesteps[i1]) > double.Epsilon)
+                {
+                    return false;
+                }
+            }
+
+            for (int i1 = 0; i1 < this.Values.Length; i1++)
+            {
+                if (Math.Abs(other.Values[i1] - this.Values[i1]) > double.Epsilon)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         #endregion
