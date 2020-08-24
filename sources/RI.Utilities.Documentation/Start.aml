@@ -3,28 +3,54 @@
   <developerConceptualDocument
     xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-
     <introduction>
       <para>
-        <externalLink>
-          <linkText>Documentation</linkText>
-          <linkUri>https://roteninformatik.github.io/UtilitiesDotNet/</linkUri>
-          <linkTarget>_self</linkTarget>
-        </externalLink>
+        Assorted utilities and extensions for .NET.
       </para>
       <para>
-        <externalLink>
-          <linkText>Code</linkText>
-          <linkUri>https://github.com/RotenInformatik/UtilitiesDotNet</linkUri>
-          <linkTarget>_self</linkTarget>
-        </externalLink>
+        Single assembly, based on .NET Standard 2.0, with no additional dependencies.
       </para>
       <para>
-        <externalLink>
-          <linkText>NuGet package</linkText>
-          <linkUri>https://www.nuget.org/packages/RI.Utilities/</linkUri>
-          <linkTarget>_self</linkTarget>
-        </externalLink>
+        <markup>
+          <a href='https://www.nuget.org/packages/RI.Utilities/'>
+            <img src="https://img.shields.io/nuget/v/RI.Utilities" referrerpolicy="no-referrer" alt="Nuget"/>
+          </a>
+        </markup>
+      </para>
+      <para>
+        <markup>
+          <a href='https://github.com/RotenInformatik/UtilitiesDotNet/blob/master/LICENSE'>
+            <img src="https://img.shields.io/github/license/RotenInformatik/UtilitiesDotNet" referrerpolicy="no-referrer" alt="License"/>
+          </a>
+        </markup>
+      </para>
+      <para>
+        <markup>
+          <a href='https://github.com/RotenInformatik/UtilitiesDotNet'>
+            <img src="https://img.shields.io/badge/repo-UtilitiesDotNet-lightgrey" referrerpolicy="no-referrer" alt="Repository"/>
+          </a>
+        </markup>
+      </para>
+      <para>
+        <markup>
+          <a href='https://github.com/RotenInformatik/UtilitiesDotNet/blob/master/README.md'>
+            <img src="https://img.shields.io/badge/docs-Readme-yellowgreen" referrerpolicy="no-referrer" alt="Documentation"/>
+          </a>
+        </markup>
+      </para>
+      <para>
+        <markup>
+          <a href='https://github.com/RotenInformatik/UtilitiesDotNet/blob/master/HISTORY.md'>
+            <img src="https://img.shields.io/badge/docs-History-yellowgreen" referrerpolicy="no-referrer" alt="Documentation"/>
+          </a>
+        </markup>
+      </para>
+      <para>
+        <markup>
+          <a href='https://roteninformatik.github.io/UtilitiesDotNet/api/'>
+            <img src="https://img.shields.io/badge/docs-API-yellowgreen" referrerpolicy="no-referrer" alt="Documentation"/>
+          </a>
+        </markup>
       </para>
     </introduction>
     <relatedTopics>

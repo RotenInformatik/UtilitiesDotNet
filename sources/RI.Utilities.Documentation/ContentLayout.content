@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Topics>
-  <Topic id="5c749026-ca14-482c-9e6c-4f30f8c7cc08" visible="True" isDefault="true" isSelected="true" title="API reference" />
+  <Topic id="5c749026-ca14-482c-9e6c-4f30f8c7cc08" visible="True" isDefault="true" title="Start" />
+  <Topic id="038214fd-353e-4e3f-a147-e571417691ca" visible="True" isSelected="true" title="Assemblies" />
 </Topics>
