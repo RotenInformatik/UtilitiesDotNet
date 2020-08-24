@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+using RI.Utilities.ObjectModel;
+
 
 
 
@@ -23,8 +25,7 @@ namespace RI.Utilities.Collections.Generic
     ///     </para>
     /// </remarks>
     /// TODO: Add support for IPriorityQueueAware
-    /// TODO: Implement ICopyable
-    public interface IPriorityQueue <T> : ICollection, IEnumerable<T>, IEnumerable
+    public interface IPriorityQueue <T> : ICollection, IEnumerable<T>, IEnumerable, ICopyable<IPriorityQueue<T>>
     {
         /// <summary>
         ///     Gets the highest priority currently in the queue.

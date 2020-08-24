@@ -123,7 +123,7 @@ namespace RI.Utilities.Collections.Generic
 
         /// <inheritdoc />
         /// <value>
-        /// The number of items contained in the priority queue.
+        ///     The number of items contained in the priority queue.
         /// </value>
         /// <remarks>
         ///     <para>
@@ -198,10 +198,25 @@ namespace RI.Utilities.Collections.Generic
             }
         }
 
+
+        /// <inheritdoc />
+        public void CopyTo (IPriorityQueue<T> other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            foreach (T item in this)
+            {
+                other.Enqueue(item);
+            }
+        }
+
         /// <inheritdoc />
         public T Dequeue ()
         {
-            return this.Get(true, out var _);
+            return this.Get(true, out int _);
         }
 
         /// <inheritdoc />
@@ -335,7 +350,7 @@ namespace RI.Utilities.Collections.Generic
         /// <inheritdoc />
         public T Peek ()
         {
-            return this.Get(false, out var _);
+            return this.Get(false, out int _);
         }
 
         /// <inheritdoc />
