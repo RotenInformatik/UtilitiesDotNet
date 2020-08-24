@@ -6,7 +6,12 @@
 
 ## 1.1.0
 
-
+* [#9: Add overview of main features to readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/9)
+* [#10: Merge general documentation into API reference](https://github.com/RotenInformatik/UtilitiesDotNet/issues/10)
+* [#14: Review whether all types implement all applicable interfaces](https://github.com/RotenInformatik/UtilitiesDotNet/issues/14)
+* [#15: Move IDependencyResolver to abstraction project](https://github.com/RotenInformatik/UtilitiesDotNet/issues/15)
+* [#16: Switch to .NET Standard 2.0](https://github.com/RotenInformatik/UtilitiesDotNet/issues/16)
+* Misc. minor documentation improvements
 
 ## 1.0.0
 
