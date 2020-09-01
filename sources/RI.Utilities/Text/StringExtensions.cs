@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security;
+using System.Security.Cryptography;
 using System.Text;
 
+using RI.Utilities.Binary;
 using RI.Utilities.Dates;
 using RI.Utilities.Exceptions;
 using RI.Utilities.Numbers;
@@ -51,6 +54,308 @@ namespace RI.Utilities.Text
 
 
         #region Static Methods
+
+        /// <summary>
+        /// Encodes a string as Base64 string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="options">The Base64 formatting options. Default value is <see cref="Base64FormattingOptions.None"/>.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>The Base64 string or an empty string if the string is empty.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string EncodeBase64 (this string str, Base64FormattingOptions options = Base64FormattingOptions.None, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            byte[] bytes = (encoding ?? Encoding.UTF8).GetBytes(str);
+            return bytes.EncodeBase64(options);
+        }
+
+        /// <summary>
+        /// Encodes a string as a hexadecimal string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>
+        /// The hexadecimal string or an empty string if the string is empty.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string EncodeHex(this string str, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            byte[] bytes = (encoding ?? Encoding.UTF8).GetBytes(str);
+            return bytes.EncodeHex();
+        }
+
+        /// <summary>
+        /// Decodes a Base64 string to a string.
+        /// </summary>
+        /// <param name="str">The Base64 string.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>The decoded string.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string DecodeBase64Text (this string str, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            byte[] bytes = str.DecodeBase64Binary();
+            return (encoding ?? Encoding.UTF8).GetString(bytes);
+        }
+
+        /// <summary>
+        /// Decodes a Base64 string to a byte array.
+        /// </summary>
+        /// <param name="str">The Base64 string.</param>
+        /// <returns>The decoded byte array.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static byte[] DecodeBase64Binary (this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return new byte[0];
+            }
+
+            return Convert.FromBase64String(str);
+        }
+
+        /// <summary>
+        /// Decodes a hexadecimal string to a string.
+        /// </summary>
+        /// <param name="str">The hexadecimal string.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>The decoded string.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string DecodeHexText (this string str, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            byte[] bytes = str.DecodeHexBinary();
+            return (encoding ?? Encoding.UTF8).GetString(bytes);
+        }
+
+        /// <summary>
+        /// Decodes a hexadecimal string to a byte array.
+        /// </summary>
+        /// <param name="str">The hexadecimal string.</param>
+        /// <returns>The decoded byte array.</returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static byte[] DecodeHexBinary (this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return new byte[0];
+            }
+
+            byte[] data = new byte[str.Length / 2];
+
+            for (int i1 = 0; i1 < (str.Length / 2); i1++)
+            {
+                string value = str.Substring(i1 * 2, 2);
+                data[i1] = byte.Parse(value, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+            }
+
+            return data;
+        }
+
+        /// <summary>
+        /// Encodes a string to be usable in a URL.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns>
+        /// The URL compatible string.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string EncodeUrl (this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            return WebUtility.UrlEncode(str);
+        }
+
+        /// <summary>
+        /// Decodes a URL compatible string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns>
+        /// The decoded string.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string DecodeUrl(this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            return WebUtility.UrlDecode(str);
+        }
+
+        /// <summary>
+        /// Encodes a string to be usable in HTML.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns>
+        /// The HTML compatible string.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string EncodeHtml (this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            return WebUtility.HtmlEncode(str);
+        }
+
+        /// <summary>
+        /// Decodes a HTML compatible string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns>
+        /// The decoded string.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
+        public static string DecodeHtml (this string str)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            return WebUtility.HtmlDecode(str);
+        }
+
+        /// <summary>
+        /// Computes a GUID of a string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>
+        /// The GUID.
+        /// </returns>
+        /// <remarks>
+        /// <note type="note">
+        /// <see cref="ComputeGuid"/> first reduces the string to a MD5 hash and uses this to construct a GUID.
+        /// </note>
+        ///<note type="security">
+        /// Do not use <see cref="ComputeGuid"/> for security relevant operations as it uses MD5 internally.
+        /// </note>
+        /// </remarks>
+        public static Guid ComputeGuid (this string str, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return Guid.Empty;
+            }
+
+            byte[] bytes = str.ComputeMd5(encoding);
+            return new Guid(bytes);
+        }
+
+        /// <summary>
+        /// Computes the MD5 hash of a string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="encoding">The encoding or null to use <see cref="Encoding.UTF8"/>. Default value is null.</param>
+        /// <returns>
+        /// The MD5 hash.
+        /// </returns>
+        /// <remarks>
+        ///<note type="security">
+        /// Do not use <see cref="ComputeMd5"/> for security relevant operations.
+        /// </note>
+        /// </remarks>
+        public static byte[] ComputeMd5 (this string str, Encoding encoding = null)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return new byte[16];
+            }
+
+            byte[] bytes = (encoding ?? Encoding.UTF8).GetBytes(str);
+
+            using (MD5 algorithm = MD5.Create())
+            {
+                return algorithm.ComputeHash(bytes);
+            }
+        }
 
         /// <summary>
         ///     Determines whether a specified string occurs in a string.

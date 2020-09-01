@@ -4,6 +4,10 @@
 
 ---
 
+## 1.2.0
+
+* [#22: Show library highlights in readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/22)
+
 ## 1.1.0
 
 * [#9: Add overview of main features to readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/9)

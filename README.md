@@ -10,6 +10,10 @@ Single assembly, based on .NET Standard 2.1, with no additional dependencies.
 
 ---
 
+The [API documentation](https://roteninformatik.github.io/UtilitiesDotNet/api/) provides a complete list of available functionality.
+
+The following lists show a rough overview of some of the utilities and extensions.
+
 ## New types
 
 * Data formats
