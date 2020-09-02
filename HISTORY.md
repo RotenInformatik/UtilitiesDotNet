@@ -6,6 +6,22 @@
 
 ## 1.2.0
 
+* [#21: Wishlist: StringExtensions.EncodeBase64](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.EncodeHex](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeBase64Text](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeBase64Binary](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeHex64Text](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeHex64Binary](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.EncodeUrl](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeUrl](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.EncodeHtml](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.DecodeHtml](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.ComputeGuid](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.ComputeMd5](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.EncodeBase64](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.EncodeHex](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.ComputeGuid](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.ComputeMd5](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#22: Show library highlights in readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/22)
 
 ## 1.1.0

@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.Randomizing
 {
-	/// <summary>
-	///     Contains randomizing utilities and extensions.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains randomizing utilities and extensions.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

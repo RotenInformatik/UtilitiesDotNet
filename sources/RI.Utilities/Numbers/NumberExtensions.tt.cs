@@ -3143,8 +3143,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(false)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static sbyte Abs (this sbyte value) => value < 0 ? (sbyte)(-1 * value) : value;
 
         /// <summary>
@@ -3198,8 +3198,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static short Abs (this short value) => value < 0 ? (short)(-1 * value) : value;
 
         /// <summary>
@@ -3253,8 +3253,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static int Abs (this int value) => value < 0 ? (int)(-1 * value) : value;
 
         /// <summary>
@@ -3308,8 +3308,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static long Abs (this long value) => value < 0 ? (long)(-1 * value) : value;
 
         /// <summary>
@@ -3363,8 +3363,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static float Abs (this float value) => value < 0.0f ? (float)(-1.0f * value) : value;
 
         /// <summary>
@@ -3418,8 +3418,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static double Abs (this double value) => value < 0.0 ? (double)(-1.0 * value) : value;
 
         /// <summary>
@@ -3473,8 +3473,8 @@ namespace RI.Utilities.Numbers
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         [CLSCompliant(true)]
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static decimal Abs (this decimal value) => value < 0.0m ? (decimal)(-1.0m * value) : value;
 
         /// <summary>

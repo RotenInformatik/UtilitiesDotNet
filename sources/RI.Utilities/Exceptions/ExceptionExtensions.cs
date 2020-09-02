@@ -25,15 +25,15 @@ namespace RI.Utilities.Exceptions
 
         private const string DefaultIndent = " ";
 
+        private const string FieldPrefix = "* ";
+
+        private const string FieldSeparator = " : ";
+
         private const string NullString = "[null]";
 
         private const string PropertyPrefix = "# ";
 
         private const string PropertySeparator = " : ";
-
-        private const string FieldPrefix = "* ";
-
-        private const string FieldSeparator = " : ";
 
         private const string StackTracePrefix = "-> ";
 
@@ -166,7 +166,7 @@ namespace RI.Utilities.Exceptions
                                                                 ?.Name;
 
                                 string type = propertyType + (valueType == null ? string.Empty : "[" + valueType + "]");
-                                
+
                                 string stringValue = ExceptionExtensions.GetStringFromValue(propertyValue, indentString);
                                 string escapedStringValue = stringValue.Escape(StringEscapeOptions.NonPrintable);
 
@@ -194,7 +194,7 @@ namespace RI.Utilities.Exceptions
                     try
                     {
                         FieldInfo[] fields = exception.GetType()
-                                                             .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                                                      .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
                         foreach (FieldInfo field in fields)
                         {
@@ -331,24 +331,25 @@ namespace RI.Utilities.Exceptions
             {
                 return (string)value;
             }
-            
+
             if (value is byte[])
             {
-                return "0x" + ((byte[])value).Select(x => x.ToString("x2", CultureInfo.InvariantCulture)).Join();
+                return "0x" + ((byte[])value).Select(x => x.ToString("x2", CultureInfo.InvariantCulture))
+                                             .Join();
             }
 
             if (value is IDictionary)
             {
                 return (from DictionaryEntry x in (IDictionary)value
-                               select "[" + ExceptionExtensions.GetStringFromValue(x.Key, indentString) + "]=[" + ExceptionExtensions.GetStringFromValue(x.Value, indentString) + "]").Join(";");
+                        select "[" + ExceptionExtensions.GetStringFromValue(x.Key, indentString) + "]=[" + ExceptionExtensions.GetStringFromValue(x.Value, indentString) + "]").Join(";");
             }
-            
+
             if (value is IEnumerable)
             {
                 return (from x in ((IEnumerable)value).Cast<object>()
-                               select "[" + ExceptionExtensions.GetStringFromValue(x, indentString) + "]").Join(";");
+                        select "[" + ExceptionExtensions.GetStringFromValue(x, indentString) + "]").Join(";");
             }
-            
+
             return value.ToString();
         }
 

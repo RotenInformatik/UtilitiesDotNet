@@ -10,7 +10,7 @@ Single assembly, based on .NET Standard 2.1, with no additional dependencies.
 
 ---
 
-The [API documentation](https://roteninformatik.github.io/UtilitiesDotNet/api/) provides a complete list of available functionality.
+The [API documentation](https://roteninformatik.github.io/UtilitiesDotNet/api/) provides a complete list of all available functionality.
 
 The following lists show a rough overview of some of the utilities and extensions.
 
@@ -41,7 +41,7 @@ The following lists show a rough overview of some of the utilities and extension
   * **RomanNumber**
   * **RunningValues**
   * **StatisticValues**
-* Object model interfaces
+* Object model interfaces/contracts
   * **ICloneable**
   * **ICopyable**
   * **ISynchronizable**

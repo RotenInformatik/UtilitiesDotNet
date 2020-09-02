@@ -13,9 +13,9 @@ namespace RI.Utilities.Collections
     ///     Provides utility/extension methods for the <see cref="IEnumerable{T}" /> type and its implementations.
     /// </summary>
     /// <remarks>
-    ///         <note type="important">
-    ///             The complexity stated for the operations provided by this class are under the assumption that enumerating an <see cref="IEnumerable{T}" /> has a complexity of O(n) where n is the number of elements in the sequence.
-    ///         </note>
+    ///     <note type="important">
+    ///         The complexity stated for the operations provided by this class are under the assumption that enumerating an <see cref="IEnumerable{T}" /> has a complexity of O(n) where n is the number of elements in the sequence.
+    ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
     /// TODO: ToListList

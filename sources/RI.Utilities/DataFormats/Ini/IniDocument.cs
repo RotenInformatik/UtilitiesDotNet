@@ -2072,6 +2072,8 @@ namespace RI.Utilities.DataFormats.Ini
 
 
 
+        #region Interface: ICopyable<IniDocument>
+
         /// <inheritdoc />
         public void CopyTo (IniDocument other)
         {
@@ -2082,5 +2084,7 @@ namespace RI.Utilities.DataFormats.Ini
 
             other.Elements.AddRange(this.Elements);
         }
+
+        #endregion
     }
 }

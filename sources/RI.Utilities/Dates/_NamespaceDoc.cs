@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.Dates
 {
-	/// <summary>
-	///     Contains date and time utilities and extensions.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains date and time utilities and extensions.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

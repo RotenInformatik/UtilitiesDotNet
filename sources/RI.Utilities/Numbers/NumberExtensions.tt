@@ -384,8 +384,8 @@ string clsCompliance = isClsCompliant[i1] ? "[CLSCompliant(true)]" : "[CLSCompli
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         <#=clsCompliance#>
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static <#=type#> Abs (this <#=type#> value) => value < <#=zero#> ? (<#=type#>)(<#=minusOne#> * value) : value;
 
         /// <summary>

@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.Exceptions
 {
-	/// <summary>
-	///     Contains new general exception types and exception utilities and extensions.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains new general exception types and exception utilities and extensions.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

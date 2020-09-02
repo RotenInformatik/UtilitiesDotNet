@@ -26,7 +26,7 @@ namespace RI.Utilities.Paths
     ///         <see cref="PathProperties" /> supports Windows, Unix, and UNC style paths.
     ///     </para>
     ///     <para>
-    ///         <see cref="ToString(string)"/> supports the following format strings; <c>o</c>, <c>O</c>, <c>g</c>, <c>G</c>, null or empty string: The original path (<see cref="PathOriginal"/>) / <c>n</c>, <c>N</c>: The normalized path (<see cref="PathNormalized"/>) / <c>r</c>, <c>R</c>: The resolved path (<see cref="PathResolved"/>).
+    ///         <see cref="ToString(string)" /> supports the following format strings; <c> o </c>, <c> O </c>, <c> g </c>, <c> G </c>, null or empty string: The original path (<see cref="PathOriginal" />) / <c> n </c>, <c> N </c>: The normalized path (<see cref="PathNormalized" />) / <c> r </c>, <c> R </c>: The resolved path (<see cref="PathResolved" />).
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
@@ -1195,6 +1195,25 @@ namespace RI.Utilities.Paths
             return this.IsCompatibleWith(type.Value, null);
         }
 
+        /// <inheritdoc cref="IFormattable.ToString(string,IFormatProvider)" />
+        public string ToString (string format)
+        {
+            switch (format?.ToLowerInvariant())
+            {
+                case {} when format.IsNullOrEmpty() || (format == "o"):
+                    return this.PathOriginal;
+
+                case { } when format.IsNullOrEmpty() || (format == "n"):
+                    return this.PathNormalized;
+
+                case { } when format.IsNullOrEmpty() || (format == "r"):
+                    return this.PathResolved;
+
+                default:
+                    throw new ArgumentException($"Invalid format string: {format}", nameof(format));
+            }
+        }
+
         private PathProperties GetResolved ()
         {
             return PathProperties.FromPath(this.PathResolved, this.AllowWildcards, this.AllowRelatives, this.Type);
@@ -1256,31 +1275,6 @@ namespace RI.Utilities.Paths
         public override string ToString ()
         {
             return this.ToString(null);
-        }
-
-        /// <inheritdoc />
-        string IFormattable.ToString(string format, IFormatProvider formatProvider)
-        {
-            return this.ToString(format);
-        }
-
-        /// <inheritdoc cref="IFormattable.ToString(string,IFormatProvider)" />
-        public string ToString(string format)
-        {
-            switch (format?.ToLowerInvariant())
-            {
-                case {} when (format.IsNullOrEmpty()) || (format == "o"):
-                    return this.PathOriginal;
-
-                case { } when (format.IsNullOrEmpty()) || (format == "n"):
-                    return this.PathNormalized;
-
-                case { } when (format.IsNullOrEmpty()) || (format == "r"):
-                    return this.PathResolved;
-
-                default:
-                    throw new ArgumentException($"Invalid format string: {format}", nameof(format));
-            }
         }
 
         #endregion
@@ -1349,6 +1343,19 @@ namespace RI.Utilities.Paths
             }
 
             return string.Equals(this.PathNormalizedComparable, other.PathNormalizedComparable, StringComparison.Ordinal);
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: IFormattable
+
+        /// <inheritdoc />
+        string IFormattable.ToString (string format, IFormatProvider formatProvider)
+        {
+            return this.ToString(format);
         }
 
         #endregion
