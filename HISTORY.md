@@ -18,11 +18,20 @@
 * [#21: Wishlist: StringExtensions.DecodeHtml](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: StringExtensions.ComputeGuid](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: StringExtensions.ComputeMd5](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.ComputeSha256](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.ComputeSha512](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: StringExtensions.EncodeString](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: ByteArrayExtensions.EncodeBase64](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: ByteArrayExtensions.EncodeHex](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: ByteArrayExtensions.ComputeGuid](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: ByteArrayExtensions.ComputeMd5](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.ComputeSha256](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.ComputeSha512](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: ByteArrayExtensions.DecodeString](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
+* [#21: Wishlist: BoolExtensions.ToBinary](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#22: Show library highlights in readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/22)
+* Code cleanup
+* Misc. minor documentation improvements
 
 ## 1.1.0
 
