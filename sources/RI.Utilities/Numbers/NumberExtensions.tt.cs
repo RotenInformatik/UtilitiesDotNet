@@ -223,8 +223,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static sbyte Gcd (this IEnumerable<sbyte> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            sbyte gcd = 0;
+            int index = 0;
+            foreach(sbyte value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static sbyte Lcm (this IEnumerable<sbyte> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            sbyte lcm = 0;
+            int index = 0;
+            foreach(sbyte value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -517,8 +590,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static byte Gcd (this IEnumerable<byte> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            byte gcd = 0;
+            int index = 0;
+            foreach(byte value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static byte Lcm (this IEnumerable<byte> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            byte lcm = 0;
+            int index = 0;
+            foreach(byte value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -811,8 +957,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static short Gcd (this IEnumerable<short> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            short gcd = 0;
+            int index = 0;
+            foreach(short value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static short Lcm (this IEnumerable<short> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            short lcm = 0;
+            int index = 0;
+            foreach(short value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -1105,8 +1324,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static ushort Gcd (this IEnumerable<ushort> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            ushort gcd = 0;
+            int index = 0;
+            foreach(ushort value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static ushort Lcm (this IEnumerable<ushort> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            ushort lcm = 0;
+            int index = 0;
+            foreach(ushort value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -1399,8 +1691,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static int Gcd (this IEnumerable<int> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            int gcd = 0;
+            int index = 0;
+            foreach(int value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static int Lcm (this IEnumerable<int> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            int lcm = 0;
+            int index = 0;
+            foreach(int value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -1693,8 +2058,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static uint Gcd (this IEnumerable<uint> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            uint gcd = 0;
+            int index = 0;
+            foreach(uint value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static uint Lcm (this IEnumerable<uint> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            uint lcm = 0;
+            int index = 0;
+            foreach(uint value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -1987,8 +2425,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static long Gcd (this IEnumerable<long> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            long gcd = 0;
+            int index = 0;
+            foreach(long value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static long Lcm (this IEnumerable<long> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            long lcm = 0;
+            int index = 0;
+            foreach(long value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -2281,8 +2792,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static ulong Gcd (this IEnumerable<ulong> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            ulong gcd = 0;
+            int index = 0;
+            foreach(ulong value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(false)]
+        public static ulong Lcm (this IEnumerable<ulong> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            ulong lcm = 0;
+            int index = 0;
+            foreach(ulong value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -2575,8 +3159,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static float Gcd (this IEnumerable<float> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            float gcd = 0;
+            int index = 0;
+            foreach(float value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static float Lcm (this IEnumerable<float> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            float lcm = 0;
+            int index = 0;
+            foreach(float value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to doubles.
@@ -2821,8 +3478,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static double Gcd (this IEnumerable<double> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            double gcd = 0;
+            int index = 0;
+            foreach(double value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static double Lcm (this IEnumerable<double> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            double lcm = 0;
+            int index = 0;
+            foreach(double value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
@@ -3067,8 +3797,81 @@ namespace RI.Utilities.Numbers
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static decimal Gcd (this IEnumerable<decimal> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            decimal gcd = 0;
+            int index = 0;
+            foreach(decimal value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        [CLSCompliant(true)]
+        public static decimal Lcm (this IEnumerable<decimal> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            decimal lcm = 0;
+            int index = 0;
+            foreach(decimal value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 
         /// <summary>
         /// Converts a sequence of values to floats.
