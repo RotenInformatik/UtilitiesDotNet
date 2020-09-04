@@ -63,7 +63,7 @@ namespace RI.Utilities.DataFormats.Csv
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
-        public CsvReader(TextReader reader, bool keepOpen)
+        public CsvReader (TextReader reader, bool keepOpen)
             : this(reader, keepOpen, null) { }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace RI.Utilities.DataFormats.Csv
         /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this reader is closed (false) or kept open (true). </param>
         /// <param name="settings"> The used CSV reader settings or null if default values should be used. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
-        public CsvReader(TextReader reader, bool keepOpen, CsvReaderSettings settings)
+        public CsvReader (TextReader reader, bool keepOpen, CsvReaderSettings settings)
         {
             if (reader == null)
             {

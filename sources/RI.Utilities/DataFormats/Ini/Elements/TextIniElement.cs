@@ -1,4 +1,11 @@
-﻿namespace RI.Utilities.DataFormats.Ini.Elements
+﻿using System;
+
+using RI.Utilities.ObjectModel;
+
+
+
+
+namespace RI.Utilities.DataFormats.Ini.Elements
 {
     /// <summary>
     ///     Represents arbitrary text in INI data.
@@ -12,9 +19,7 @@
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Implement ICopyable
-    /// TODO: Implement ICloneable
-    public sealed class TextIniElement : IniElement
+    public sealed class TextIniElement : IniElement, ICloneable<TextIniElement>, ICloneable, ICopyable<TextIniElement>
     {
         #region Instance Constructor/Destructor
 
@@ -72,6 +77,43 @@
         public override string ToString ()
         {
             return this.Text;
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICloneable<TextIniElement>
+
+        /// <inheritdoc />
+        public TextIniElement Clone ()
+        {
+            return new TextIniElement(this.Text);
+        }
+
+        /// <inheritdoc />
+        object ICloneable.Clone ()
+        {
+            return this.Clone();
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICopyable<TextIniElement>
+
+        /// <inheritdoc />
+        public void CopyTo (TextIniElement other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            other.Text = this.Text;
         }
 
         #endregion

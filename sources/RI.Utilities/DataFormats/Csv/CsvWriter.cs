@@ -64,7 +64,7 @@ namespace RI.Utilities.DataFormats.Csv
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public CsvWriter(TextWriter writer, bool keepOpen)
+        public CsvWriter (TextWriter writer, bool keepOpen)
             : this(writer, keepOpen, null) { }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace RI.Utilities.DataFormats.Csv
         /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
         /// <param name="settings"> The used CSV writer settings or null if default values should be used. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public CsvWriter(TextWriter writer, bool keepOpen, CsvWriterSettings settings)
+        public CsvWriter (TextWriter writer, bool keepOpen, CsvWriterSettings settings)
         {
             if (writer == null)
             {
@@ -119,9 +119,9 @@ namespace RI.Utilities.DataFormats.Csv
         /// </value>
         public CsvWriterSettings Settings { get; }
 
-        private bool ValueWrittenOnCurrentLine { get; set; }
-
         private bool KeepOpen { get; }
+
+        private bool ValueWrittenOnCurrentLine { get; set; }
 
         #endregion
 

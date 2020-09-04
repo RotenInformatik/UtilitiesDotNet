@@ -33,6 +33,7 @@
 * [#22: Show library highlights in readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/22)
 * [#23: Add KeepOpen to all wrapping readers, writers, and streams](https://github.com/RotenInformatik/UtilitiesDotNet/issues/23)
 * [#25: Add LCM and GCD calculations from sequences to NumberExtensions](https://github.com/RotenInformatik/UtilitiesDotNet/issues/25)
+* [#26: Implement ICloneable and ICopyable for all IniElement derivates](https://github.com/RotenInformatik/UtilitiesDotNet/issues/26)
 * Code cleanup
 * Misc. minor documentation improvements
 

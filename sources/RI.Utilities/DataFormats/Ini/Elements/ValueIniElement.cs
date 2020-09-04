@@ -1,6 +1,7 @@
 ﻿using System;
 
 using RI.Utilities.Exceptions;
+using RI.Utilities.ObjectModel;
 using RI.Utilities.Text;
 
 
@@ -17,9 +18,7 @@ namespace RI.Utilities.DataFormats.Ini.Elements
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Implement ICopyable
-    /// TODO: Implement ICloneable
-    public sealed class ValueIniElement : IniElement
+    public sealed class ValueIniElement : IniElement, ICloneable<ValueIniElement>, ICloneable, ICopyable<ValueIniElement>
     {
         #region Instance Constructor/Destructor
 
@@ -120,6 +119,44 @@ namespace RI.Utilities.DataFormats.Ini.Elements
         public override string ToString ()
         {
             return this.Name + IniSettings.DefaultNameValueSeparator + this.Value;
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICloneable<ValueIniElement>
+
+        /// <inheritdoc />
+        public ValueIniElement Clone ()
+        {
+            return new ValueIniElement(this.Name, this.Value);
+        }
+
+        /// <inheritdoc />
+        object ICloneable.Clone ()
+        {
+            return this.Clone();
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICopyable<ValueIniElement>
+
+        /// <inheritdoc />
+        public void CopyTo (ValueIniElement other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            other.Name = this.Name;
+            other.Value = this.Value;
         }
 
         #endregion

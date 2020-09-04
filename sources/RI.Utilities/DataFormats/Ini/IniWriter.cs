@@ -65,7 +65,7 @@ namespace RI.Utilities.DataFormats.Ini
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public IniWriter(TextWriter writer, bool keepOpen)
+        public IniWriter (TextWriter writer, bool keepOpen)
             : this(writer, keepOpen, null) { }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace RI.Utilities.DataFormats.Ini
         /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
         /// <param name="settings"> The used INI writer settings or null if default values should be used. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public IniWriter(TextWriter writer, bool keepOpen, IniWriterSettings settings)
+        public IniWriter (TextWriter writer, bool keepOpen, IniWriterSettings settings)
         {
             if (writer == null)
             {
@@ -120,9 +120,9 @@ namespace RI.Utilities.DataFormats.Ini
         /// </value>
         public IniWriterSettings Settings { get; }
 
-        private bool Written { get; set; }
-
         private bool KeepOpen { get; }
+
+        private bool Written { get; set; }
 
         #endregion
 
