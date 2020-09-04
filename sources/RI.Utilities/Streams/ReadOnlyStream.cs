@@ -11,7 +11,6 @@ namespace RI.Utilities.Streams
     ///     Implements a stream which wraps another stream and only allows read operations on that stream.
     /// </summary>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Create pendant: WriteOnlyStream
     public sealed class ReadOnlyStream : Stream
     {
         #region Instance Constructor/Destructor
@@ -33,9 +32,9 @@ namespace RI.Utilities.Streams
         ///     Creates a new instance of <see cref="ReadOnlyStream" />.
         /// </summary>
         /// <param name="stream"> The stream to wrap. </param>
-        /// <param name="doNotOwnStream"> Specifies whether the wrapped stream should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped stream should be closed when this stream is closed (false) or kept open (true). </param>
         /// <exception cref="ArgumentNullException"> <paramref name="stream" /> is null. </exception>
-        public ReadOnlyStream (Stream stream, bool doNotOwnStream)
+        public ReadOnlyStream (Stream stream, bool keepOpen)
         {
             if (stream == null)
             {
@@ -43,7 +42,7 @@ namespace RI.Utilities.Streams
             }
 
             this.BaseStream = stream;
-            this.DoNotOwnStream = doNotOwnStream;
+            this.KeepOpen = keepOpen;
         }
 
         /// <summary>
@@ -69,7 +68,7 @@ namespace RI.Utilities.Streams
         /// </value>
         public Stream BaseStream { get; private set; }
 
-        private bool DoNotOwnStream { get; }
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -87,7 +86,7 @@ namespace RI.Utilities.Streams
         {
             if (this.BaseStream != null)
             {
-                if (!this.DoNotOwnStream)
+                if (!this.KeepOpen)
                 {
                     this.BaseStream.Close();
                 }

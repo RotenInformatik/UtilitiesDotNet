@@ -19,7 +19,6 @@ namespace RI.Utilities.Numbers
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Code example
     [Serializable,]
     public struct StatisticValues : ICloneable<StatisticValues>, ICloneable, IEquatable<StatisticValues>
     {

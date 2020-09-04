@@ -29,7 +29,6 @@ namespace RI.Utilities.Collections.Virtualization
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Code example
     public sealed class VirtualizationCollection <T> : IList<T>, IReadOnlyList<T>, ICollection<T>, IReadOnlyCollection<T>, IEnumerable<T>, IList, ICollection, IEnumerable, IDisposable, ISynchronizable
     {
         #region Instance Constructor/Destructor

@@ -19,7 +19,6 @@ namespace RI.Utilities.Streams
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Create pendant: TextStream (wrapping a StreamReader or StreamWriter using a specified Encoding)
     public sealed class BinaryStream : Stream
     {
         #region Instance Constructor/Destructor
@@ -28,9 +27,9 @@ namespace RI.Utilities.Streams
         ///     Creates a new instance of <see cref="BinaryStream" />.
         /// </summary>
         /// <param name="reader"> The <see cref="BinaryReader" /> to use. </param>
-        /// <param name="doNotOwnReader"> Specifies whether the wrapped reader should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this stream is closed (false) or kept open (true). </param>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
-        public BinaryStream (BinaryReader reader, bool doNotOwnReader)
+        public BinaryStream (BinaryReader reader, bool keepOpen)
         {
             if (reader == null)
             {
@@ -39,7 +38,7 @@ namespace RI.Utilities.Streams
 
             this.Reader = reader;
             this.Writer = null;
-            this.DoNotOwnStream = doNotOwnReader;
+            this.KeepOpen = keepOpen;
         }
 
         /// <summary>
@@ -59,9 +58,9 @@ namespace RI.Utilities.Streams
         ///     Creates a new instance of <see cref="BinaryStream" />.
         /// </summary>
         /// <param name="writer"> The <see cref="BinaryWriter" /> to use. </param>
-        /// <param name="doNotOwnWriter"> Specifies whether the wrapped writer should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this stream is closed (false) or kept open (true). </param>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public BinaryStream (BinaryWriter writer, bool doNotOwnWriter)
+        public BinaryStream (BinaryWriter writer, bool keepOpen)
         {
             if (writer == null)
             {
@@ -70,7 +69,7 @@ namespace RI.Utilities.Streams
 
             this.Reader = null;
             this.Writer = writer;
-            this.DoNotOwnStream = doNotOwnWriter;
+            this.KeepOpen = keepOpen;
         }
 
         /// <summary>
@@ -91,9 +90,9 @@ namespace RI.Utilities.Streams
         /// </summary>
         /// <param name="reader"> The <see cref="BinaryReader" /> to use. </param>
         /// <param name="writer"> The <see cref="BinaryWriter" /> to use. </param>
-        /// <param name="doNotOwnWrapped"> Specifies whether the wrapped reader and writer should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader and writer should be closed when this stream is closed (false) or kept open (true). </param>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
-        public BinaryStream (BinaryReader reader, BinaryWriter writer, bool doNotOwnWrapped)
+        public BinaryStream (BinaryReader reader, BinaryWriter writer, bool keepOpen)
         {
             if (reader == null)
             {
@@ -107,7 +106,7 @@ namespace RI.Utilities.Streams
 
             this.Reader = reader;
             this.Writer = writer;
-            this.DoNotOwnStream = doNotOwnWrapped;
+            this.KeepOpen = keepOpen;
         }
 
         /// <summary>
@@ -155,7 +154,7 @@ namespace RI.Utilities.Streams
         /// </value>
         public BinaryWriter Writer { get; private set; }
 
-        private bool DoNotOwnStream { get; }
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -173,7 +172,7 @@ namespace RI.Utilities.Streams
         {
             if (this.Reader != null)
             {
-                if (!this.DoNotOwnStream)
+                if (!this.KeepOpen)
                 {
                     this.Reader.Close();
                 }
@@ -183,7 +182,7 @@ namespace RI.Utilities.Streams
 
             if (this.Writer != null)
             {
-                if (!this.DoNotOwnStream)
+                if (!this.KeepOpen)
                 {
                     this.Writer.Close();
                 }

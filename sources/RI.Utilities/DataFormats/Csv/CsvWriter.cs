@@ -19,7 +19,6 @@ namespace RI.Utilities.DataFormats.Csv
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Add constructor with doNotOwn parameter
     public sealed class CsvWriter : IDisposable
     {
         #region Instance Constructor/Destructor
@@ -30,20 +29,52 @@ namespace RI.Utilities.DataFormats.Csv
         /// <param name="writer"> The used <see cref="TextWriter" />. </param>
         /// <remarks>
         ///     <para>
+        ///         The wrapped writer is closed if this writer is closed.
+        ///     </para>
+        ///     <para>
         ///         CSV writer settings with default values are used.
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
         public CsvWriter (TextWriter writer)
-            : this(writer, null) { }
+            : this(writer, false, null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="CsvWriter" />.
         /// </summary>
         /// <param name="writer"> The used <see cref="TextWriter" />. </param>
         /// <param name="settings"> The used CSV writer settings or null if default values should be used. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The wrapped writer is closed if this writer is closed.
+        ///     </para>
+        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
         public CsvWriter (TextWriter writer, CsvWriterSettings settings)
+            : this(writer, false, settings) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="CsvWriter" />.
+        /// </summary>
+        /// <param name="writer"> The used <see cref="TextWriter" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
+        /// <remarks>
+        ///     <para>
+        ///         CSV writer settings with default values are used.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
+        public CsvWriter(TextWriter writer, bool keepOpen)
+            : this(writer, keepOpen, null) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="CsvWriter" />.
+        /// </summary>
+        /// <param name="writer"> The used <see cref="TextWriter" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
+        /// <param name="settings"> The used CSV writer settings or null if default values should be used. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
+        public CsvWriter(TextWriter writer, bool keepOpen, CsvWriterSettings settings)
         {
             if (writer == null)
             {
@@ -51,6 +82,7 @@ namespace RI.Utilities.DataFormats.Csv
             }
 
             this.BaseWriter = writer;
+            this.KeepOpen = keepOpen;
             this.Settings = settings ?? new CsvWriterSettings();
 
             this.ValueWrittenOnCurrentLine = false;
@@ -88,6 +120,8 @@ namespace RI.Utilities.DataFormats.Csv
         public CsvWriterSettings Settings { get; }
 
         private bool ValueWrittenOnCurrentLine { get; set; }
+
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -205,7 +239,12 @@ namespace RI.Utilities.DataFormats.Csv
             if (this.BaseWriter != null)
             {
                 this.BaseWriter.Flush();
-                this.BaseWriter.Close();
+
+                if (!this.KeepOpen)
+                {
+                    this.BaseWriter.Close();
+                }
+
                 this.BaseWriter = null;
             }
         }

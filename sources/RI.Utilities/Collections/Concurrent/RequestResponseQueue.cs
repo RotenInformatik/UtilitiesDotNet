@@ -27,7 +27,6 @@ namespace RI.Utilities.Collections.Concurrent
     ///     </para>
     /// </remarks>
     /// <threadsafety static="true" instance="true" />
-    /// TODO: Code example
     public sealed class RequestResponseQueue <TRequest, TResponse> : RequestResponseCollection<TRequest, TResponse, RequestResponseItem<TRequest, TResponse>>
     {
         #region Instance Constructor/Destructor

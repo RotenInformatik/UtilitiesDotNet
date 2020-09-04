@@ -33,7 +33,6 @@ namespace RI.Utilities.Reflection
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
     /// TODO: Add support for multiple parameters (requires utility to find best matching types based on type enumerables)
-    /// TODO: Code example
     public sealed class MethodCallDispatcher
     {
         #region Static Properties/Indexer

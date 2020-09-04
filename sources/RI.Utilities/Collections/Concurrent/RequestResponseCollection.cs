@@ -45,8 +45,6 @@ namespace RI.Utilities.Collections.Concurrent
     ///     </para>
     /// </remarks>
     /// <threadsafety static="true" instance="true" />
-    /// TODO: Implement RequestResponsePriorityQueue
-    /// TODO: Implement RequestResponseStack
     public abstract class RequestResponseCollection <TRequest, TResponse, TItem> : ISynchronizable
         where TItem : RequestResponseItem<TRequest, TResponse>, new()
     {

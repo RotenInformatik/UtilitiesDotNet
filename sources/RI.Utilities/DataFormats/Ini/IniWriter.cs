@@ -20,7 +20,6 @@ namespace RI.Utilities.DataFormats.Ini
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Add constructor with doNotOwn parameter
     public sealed class IniWriter : IDisposable
     {
         #region Instance Constructor/Destructor
@@ -31,20 +30,52 @@ namespace RI.Utilities.DataFormats.Ini
         /// <param name="writer"> The used <see cref="TextWriter" />. </param>
         /// <remarks>
         ///     <para>
+        ///         The wrapped writer is closed if this writer is closed.
+        ///     </para>
+        ///     <para>
         ///         INI writer settings with default values are used.
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
         public IniWriter (TextWriter writer)
-            : this(writer, null) { }
+            : this(writer, false, null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="IniWriter" />.
         /// </summary>
         /// <param name="writer"> The used <see cref="TextWriter" />. </param>
         /// <param name="settings"> The used INI writer settings or null if default values should be used. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The wrapped writer is closed if this writer is closed.
+        ///     </para>
+        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
         public IniWriter (TextWriter writer, IniWriterSettings settings)
+            : this(writer, false, settings) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="IniWriter" />.
+        /// </summary>
+        /// <param name="writer"> The used <see cref="TextWriter" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
+        /// <remarks>
+        ///     <para>
+        ///         INI writer settings with default values are used.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
+        public IniWriter(TextWriter writer, bool keepOpen)
+            : this(writer, keepOpen, null) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="IniWriter" />.
+        /// </summary>
+        /// <param name="writer"> The used <see cref="TextWriter" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped writer should be closed when this writer is closed (false) or kept open (true). </param>
+        /// <param name="settings"> The used INI writer settings or null if default values should be used. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
+        public IniWriter(TextWriter writer, bool keepOpen, IniWriterSettings settings)
         {
             if (writer == null)
             {
@@ -52,6 +83,7 @@ namespace RI.Utilities.DataFormats.Ini
             }
 
             this.BaseWriter = writer;
+            this.KeepOpen = keepOpen;
             this.Settings = settings ?? new IniWriterSettings();
 
             this.Written = false;
@@ -89,6 +121,8 @@ namespace RI.Utilities.DataFormats.Ini
         public IniWriterSettings Settings { get; }
 
         private bool Written { get; set; }
+
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -293,7 +327,12 @@ namespace RI.Utilities.DataFormats.Ini
             if (this.BaseWriter != null)
             {
                 this.BaseWriter.Flush();
-                this.BaseWriter.Close();
+
+                if (!this.KeepOpen)
+                {
+                    this.BaseWriter.Close();
+                }
+
                 this.BaseWriter = null;
             }
         }

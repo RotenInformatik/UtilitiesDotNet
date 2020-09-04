@@ -6,6 +6,7 @@
 
 ## 1.2.0
 
+* [#5: Synchronized some TODOs in code comments with issues](https://github.com/RotenInformatik/UtilitiesDotNet/issues/5)
 * [#21: Wishlist: StringExtensions.EncodeBase64](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: StringExtensions.EncodeHex](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: StringExtensions.DecodeBase64Text](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
@@ -30,6 +31,7 @@
 * [#21: Wishlist: ByteArrayExtensions.DecodeString](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#21: Wishlist: BoolExtensions.ToBinary](https://github.com/RotenInformatik/UtilitiesDotNet/issues/21)
 * [#22: Show library highlights in readme](https://github.com/RotenInformatik/UtilitiesDotNet/issues/22)
+* [#23: Add KeepOpen to all wrapping readers, writers, and streams](https://github.com/RotenInformatik/UtilitiesDotNet/issues/23)
 * Code cleanup
 * Misc. minor documentation improvements
 

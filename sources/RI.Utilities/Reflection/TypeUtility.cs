@@ -15,7 +15,6 @@ namespace RI.Utilities.Reflection
     ///     Provides a utility for types.
     /// </summary>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Create ObjectSynchronizer
     public static class TypeUtility
     {
         #region Static Methods

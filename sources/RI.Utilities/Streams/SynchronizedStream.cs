@@ -21,7 +21,6 @@ namespace RI.Utilities.Streams
     ///     </note>
     /// </remarks>
     /// <threadsafety static="true" instance="true" />
-    /// TODO: Add constructor with doNotOwn parameter
     public sealed class SynchronizedStream : Stream, ISynchronizable
     {
         #region Instance Constructor/Destructor
@@ -32,20 +31,52 @@ namespace RI.Utilities.Streams
         /// <param name="stream"> The stream to wrap. </param>
         /// <remarks>
         ///     <para>
+        ///         The wrapped stream is closed if this stream is closed.
+        ///     </para>
+        ///     <para>
         ///         A new, dedicated synchronization object is created and used.
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="stream" /> is null. </exception>
         public SynchronizedStream (Stream stream)
-            : this(stream, null) { }
+            : this(stream, false, null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="SynchronizedStream" />.
         /// </summary>
         /// <param name="stream"> The stream to wrap. </param>
         /// <param name="syncRoot"> The synchronization object to use. Can be null to create a new, dedicated synchronization object. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The wrapped stream is closed if this stream is closed.
+        ///     </para>
+        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="stream" /> is null. </exception>
         public SynchronizedStream (Stream stream, object syncRoot)
+            : this(stream, false, syncRoot) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="SynchronizedStream" />.
+        /// </summary>
+        /// <param name="stream"> The stream to wrap. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped stream should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <remarks>
+        ///     <para>
+        ///         A new, dedicated synchronization object is created and used.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="stream" /> is null. </exception>
+        public SynchronizedStream(Stream stream, bool keepOpen)
+            : this(stream, keepOpen, null) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="SynchronizedStream" />.
+        /// </summary>
+        /// <param name="stream"> The stream to wrap. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped stream should be closed when this stream is closed (false) or kept open (true). </param>
+        /// <param name="syncRoot"> The synchronization object to use. Can be null to create a new, dedicated synchronization object. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stream" /> is null. </exception>
+        public SynchronizedStream(Stream stream, bool keepOpen, object syncRoot)
         {
             if (stream == null)
             {
@@ -53,6 +84,7 @@ namespace RI.Utilities.Streams
             }
 
             this.BaseStream = stream;
+            this.KeepOpen = keepOpen;
             this.SyncRoot = syncRoot ?? new object();
             this.InternalSyncRoot = new object();
         }
@@ -81,6 +113,8 @@ namespace RI.Utilities.Streams
         public Stream BaseStream { get; }
 
         private object InternalSyncRoot { get; }
+
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -271,7 +305,11 @@ namespace RI.Utilities.Streams
                 lock (this.InternalSyncRoot)
                 {
                     base.Close();
-                    this.BaseStream.Close();
+
+                    if (!this.KeepOpen)
+                    {
+                        this.BaseStream.Close();
+                    }
                 }
             }
         }

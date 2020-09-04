@@ -30,7 +30,6 @@ namespace RI.Utilities.Text
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Code example
     public sealed class AlphanumComparer : IComparer<string>, IComparer, IEqualityComparer<string>, IEqualityComparer, ICloneable<AlphanumComparer>, ICloneable
     {
         #region Static Methods
