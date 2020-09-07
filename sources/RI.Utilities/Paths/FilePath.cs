@@ -57,13 +57,6 @@ namespace RI.Utilities.Paths
     /// ]]>
     /// </code>
     /// </example>
-    /// TODO: AppendBytes
-    /// TODO: AppendText
-    /// TODO: OpenTextReader
-    /// TODO: OpenTextWriter
-    /// TODO: OpenBinaryReader
-    /// TODO: OpenBinaryWriter
-    /// TODO: OpenStream
     [Serializable,]
     public sealed class FilePath : PathString, ICloneable<FilePath>, IEquatable<FilePath>, IComparable<FilePath>
     {

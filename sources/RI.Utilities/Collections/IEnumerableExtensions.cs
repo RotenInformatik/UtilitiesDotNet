@@ -18,8 +18,6 @@ namespace RI.Utilities.Collections
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: ToListList
-    /// TODO: ToListSet
     public static class IEnumerableExtensions
     {
         #region Static Methods

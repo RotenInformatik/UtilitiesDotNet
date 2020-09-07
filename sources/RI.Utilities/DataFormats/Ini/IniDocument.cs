@@ -142,7 +142,6 @@ namespace RI.Utilities.DataFormats.Ini
     /// ]]>
     /// </code>
     /// </example>
-    /// TODO: DeleteValues (deletes all values of a given name from all sections)
     public sealed class IniDocument : ICloneable, ICloneable<IniDocument>, ICopyable<IniDocument>
     {
         #region Instance Constructor/Destructor

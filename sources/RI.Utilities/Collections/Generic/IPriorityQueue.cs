@@ -24,7 +24,6 @@ namespace RI.Utilities.Collections.Generic
     ///         null are valid item values if <typeparamref name="T" /> is a reference type.
     ///     </para>
     /// </remarks>
-    /// TODO: Add support for IPriorityQueueAware
     public interface IPriorityQueue <T> : ICollection, IEnumerable<T>, IEnumerable, ICopyable<IPriorityQueue<T>>
     {
         /// <summary>

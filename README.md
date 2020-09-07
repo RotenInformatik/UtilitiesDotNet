@@ -6,7 +6,7 @@
 
 Assorted utilities and extensions for .NET.
 
-Single assembly, based on .NET Standard 2.1, with no additional dependencies.
+Single assembly, based on .NET Standard 2.0, with no additional dependencies.
 
 ---
 
@@ -63,9 +63,11 @@ The following lists show a rough overview of some of the utilities and extension
 
 * Integral types
   * **string**
+  * **bool**
   * **sbyte**, **short**, **int**, **long**
   * **byte**, **ushort**, **uint**, **ulong**
   * **float**, **double**, **decimal**
+  * **byte[ ]**
 * Commonly used types
   * **DateTime**
   * **TimeSpan**

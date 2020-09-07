@@ -14,12 +14,6 @@ namespace RI.Utilities.Collections
     ///     Provides utility/extension methods for the <see cref="IList{T}" /> type and its implementations.
     /// </summary>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: ShuffleRange
-    /// TODO: ReverseRange
-    /// TODO: SortRange
-    /// TODO: TransformRange
-    /// TODO: InsertRandom
-    /// TODO: Add overloads for all random methods with default randomizer
     public static class IListExtensions
     {
         #region Static Methods

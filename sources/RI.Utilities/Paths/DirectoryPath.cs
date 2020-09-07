@@ -39,8 +39,6 @@ namespace RI.Utilities.Paths
     /// ]]>
     /// </code>
     /// </example>
-    /// TODO: Copy methods
-    /// TODO: Move methods
     [Serializable,]
     public sealed class DirectoryPath : PathString, ICloneable<DirectoryPath>, IEquatable<DirectoryPath>, IComparable<DirectoryPath>
     {

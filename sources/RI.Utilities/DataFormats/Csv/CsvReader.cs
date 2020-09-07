@@ -252,8 +252,7 @@ namespace RI.Utilities.DataFormats.Csv
 
                 readCharacters++;
 
-                //TODO: Fix line number detection
-
+                //TODO: #29: Fix line number detection
 
                 char currentChar = (char)current;
                 char? nextChar = next == -1 ? (char?)null : (char)next;

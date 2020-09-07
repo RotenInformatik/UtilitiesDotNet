@@ -34,12 +34,6 @@ namespace RI.Utilities.Numbers
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: GeometricMean?
-    /// TODO: HarmonicMean?
-    /// TODO: Max?
-    /// TODO: Min?
-    /// TODO: Median?
-    /// TODO: Product?
     /// <example>
     ///     <code language="cs">
     /// <![CDATA[

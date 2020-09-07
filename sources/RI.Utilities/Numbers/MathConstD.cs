@@ -3,7 +3,6 @@
     /// <summary>
     ///     Mathematical and physical constants as <see cref="double" />s.
     /// </summary>
-    /// TODO: Add more from https://en.wikipedia.org/wiki/List_of_physical_constants and https://en.wikipedia.org/wiki/Mathematical_constant
     public static class MathConstD
     {
         #region Constants
