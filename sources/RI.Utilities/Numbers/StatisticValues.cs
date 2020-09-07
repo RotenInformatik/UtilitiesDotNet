@@ -124,13 +124,12 @@ namespace RI.Utilities.Numbers
             this.Count = 0;
             this.Duration = 0.0;
             this.Sum = 0.0;
+            this.ReciprocalSum = 0.0;
             this.SquareSum = 0.0;
             this.Product = 1.0;
 
             this.Min = double.MaxValue;
             this.Max = double.MinValue;
-
-            double reciprocedSum = 0.0;
 
             for (int i1 = 0; i1 < this.Values.Length; i1++)
             {
@@ -149,13 +148,12 @@ namespace RI.Utilities.Numbers
 
                 double weightedValue = value * timestep;
 
-                reciprocedSum += 1.0 / weightedValue;
-
                 this.WeightedValues[i1] = weightedValue;
                 this.Count++;
                 this.Duration += timestep;
 
                 this.Sum += weightedValue;
+                this.ReciprocalSum += 1.0 / weightedValue;
                 this.SquareSum += weightedValue * weightedValue;
                 this.Product *= weightedValue;
 
@@ -199,7 +197,7 @@ namespace RI.Utilities.Numbers
                 this.Rms = Math.Sqrt(this.SquareSum / this.Duration);
                 this.ArithmeticMean = this.Sum / this.Duration;
                 this.GeometricMean = Math.Pow(this.Product, 1.0 / this.Duration);
-                this.HarmonicMean = this.Duration / reciprocedSum;
+                this.HarmonicMean = this.Duration / this.ReciprocalSum;
 
                 double diff = 0.0;
 
@@ -297,6 +295,11 @@ namespace RI.Utilities.Numbers
         ///     The product of all values.
         /// </summary>
         public readonly double Product;
+
+        /// <summary>
+        ///     The sum of all reciprocal values.
+        /// </summary>
+        public readonly double ReciprocalSum;
 
         /// <summary>
         ///     The root-mean-square (RMS) of all values.

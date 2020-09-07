@@ -34,6 +34,8 @@
 * [#23: Add KeepOpen to all wrapping readers, writers, and streams](https://github.com/RotenInformatik/UtilitiesDotNet/issues/23)
 * [#25: Add LCM and GCD calculations from sequences to NumberExtensions](https://github.com/RotenInformatik/UtilitiesDotNet/issues/25)
 * [#26: Implement ICloneable and ICopyable for all IniElement derivates](https://github.com/RotenInformatik/UtilitiesDotNet/issues/26)
+* [#33: Additional RunningValues calculations](https://github.com/RotenInformatik/UtilitiesDotNet/issues/33)
+* [#36: StatisticValues: Make reciprocal sum available by property](https://github.com/RotenInformatik/UtilitiesDotNet/issues/36)
 * Code cleanup
 * Misc. minor documentation improvements
 
