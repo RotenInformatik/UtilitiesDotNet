@@ -34,12 +34,6 @@ namespace RI.Utilities.Numbers
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: GeometricMean?
-    /// TODO: HarmonicMean?
-    /// TODO: Max?
-    /// TODO: Min?
-    /// TODO: Median?
-    /// TODO: Product?
     /// <example>
     ///     <code language="cs">
     /// <![CDATA[
@@ -456,12 +450,44 @@ namespace RI.Utilities.Numbers
         public float Duration { get; private set; }
 
         /// <summary>
+        ///     Gets the geometric mean or average of all values.
+        /// </summary>
+        /// <value>
+        ///     The geometric mean or average of all values.
+        /// </value>
+        public float GeometricMean { get; private set; }
+
+        /// <summary>
+        ///     Gets the harmonic mean or average of all values.
+        /// </summary>
+        /// <value>
+        ///     The harmonic mean or average of all values.
+        /// </value>
+        public float HarmonicMean { get; private set; }
+
+        /// <summary>
         ///     Gets the value which was added last to the history.
         /// </summary>
         /// <value>
         ///     The value which was added last to the history.
         /// </value>
         public float Last { get; private set; }
+
+        /// <summary>
+        ///     Gets the product of all values in the history.
+        /// </summary>
+        /// <value>
+        ///     The product of all values in the history.
+        /// </value>
+        public float Product { get; private set; }
+
+        /// <summary>
+        ///     Gets the sum of all reciprocal values in the history.
+        /// </summary>
+        /// <value>
+        ///     The sum of all reciprocal values in the history.
+        /// </value>
+        public float ReciprocalSum { get; private set; }
 
         /// <summary>
         ///     Gets the root-mean-square (RMS) of all values in the history.
@@ -563,6 +589,8 @@ namespace RI.Utilities.Numbers
             float weightedSquaredValueRemoved = weightedValueRemoved * weightedValueRemoved;
 
             float sum = (this.Sum - weightedValueRemoved) + weightedValue;
+            float reciprocalSum = (this.ReciprocalSum - (1.0f / weightedValueRemoved)) + (1.0f / weightedValue);
+            float product = (this.Product / weightedValueRemoved) * weightedValue;
             float squareSum = (this.SquareSum - weightedSquaredValueRemoved) + weightedSquaredValue;
             float duration = (this.Duration - removedTimestep) + timestep;
             bool durationIsZero = duration.AlmostZero();
@@ -578,11 +606,15 @@ namespace RI.Utilities.Numbers
 
             this.Last = weightedValue;
             this.Sum = sum;
+            this.ReciprocalSum = reciprocalSum;
+            this.Product = product;
             this.SquareSum = squareSum;
             this.Duration = duration;
             this.Rms = rms;
             this.Difference = difference;
             this.ArithmeticMean = average;
+            this.HarmonicMean = duration / reciprocalSum;
+            this.GeometricMean = (float)Math.Pow(product, 1.0 / duration);
 
             this.VarianceDiff = varianceDiff;
             this.Variance = variance;
@@ -700,8 +732,12 @@ namespace RI.Utilities.Numbers
             this.Last = 0.0f;
             this.Difference = 0.0f;
             this.Sum = 0.0f;
+            this.ReciprocalSum = 0.0f;
+            this.Product = 0.0f;
             this.SquareSum = 0.0f;
             this.ArithmeticMean = 0.0f;
+            this.HarmonicMean = 0.0f;
+            this.GeometricMean = 0.0f;
             this.Duration = 0.0f;
             this.Rms = 0.0f;
             this.Variance = 0.0f;

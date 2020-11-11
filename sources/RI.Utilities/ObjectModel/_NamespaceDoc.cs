@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.ObjectModel
 {
-	/// <summary>
-	///     Contains new contracts and types for creating object models.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains new contracts and types for creating object models.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

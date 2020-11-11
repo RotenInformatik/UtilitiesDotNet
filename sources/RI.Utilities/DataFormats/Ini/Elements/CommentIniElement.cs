@@ -1,4 +1,11 @@
-﻿namespace RI.Utilities.DataFormats.Ini.Elements
+﻿using System;
+
+using RI.Utilities.ObjectModel;
+
+
+
+
+namespace RI.Utilities.DataFormats.Ini.Elements
 {
     /// <summary>
     ///     Represents a comment in INI data.
@@ -9,9 +16,7 @@
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Implement ICopyable
-    /// TODO: Implement ICloneable
-    public sealed class CommentIniElement : IniElement
+    public sealed class CommentIniElement : IniElement, ICloneable<CommentIniElement>, ICloneable, ICopyable<CommentIniElement>
     {
         #region Instance Constructor/Destructor
 
@@ -69,6 +74,43 @@
         public override string ToString ()
         {
             return IniSettings.DefaultCommentStart + this.Comment;
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICloneable<CommentIniElement>
+
+        /// <inheritdoc />
+        public CommentIniElement Clone ()
+        {
+            return new CommentIniElement(this.Comment);
+        }
+
+        /// <inheritdoc />
+        object ICloneable.Clone ()
+        {
+            return this.Clone();
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: ICopyable<CommentIniElement>
+
+        /// <inheritdoc />
+        public void CopyTo (CommentIniElement other)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+
+            other.Comment = this.Comment;
         }
 
         #endregion

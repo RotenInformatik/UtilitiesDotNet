@@ -165,13 +165,13 @@ namespace RI.Utilities.Reflection
         }
 
         /// <summary>
-        /// Determines whether a type is assignable to a generic type.
+        ///     Determines whether a type is assignable to a generic type.
         /// </summary>
-        /// <param name="type">The type to check whether it can be assigned to a generic type.</param>
-        /// <param name="genericType">The generic type.</param>
-        /// <returns>true if <paramref name="type"/> can be assigned to <paramref name="genericType"/>, false otherwise.</returns>
-        /// <exception cref="ArgumentNullException"> <paramref name="type" /> or <paramref name="genericType"/> is null. </exception>
-        /// <exception cref="ArgumentException"> <paramref name="genericType"/> is not a generic type. </exception>
+        /// <param name="type"> The type to check whether it can be assigned to a generic type. </param>
+        /// <param name="genericType"> The generic type. </param>
+        /// <returns> true if <paramref name="type" /> can be assigned to <paramref name="genericType" />, false otherwise. </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="type" /> or <paramref name="genericType" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="genericType" /> is not a generic type. </exception>
         public static bool IsAssignableToGenericType (this Type type, Type genericType)
         {
             if (type == null)

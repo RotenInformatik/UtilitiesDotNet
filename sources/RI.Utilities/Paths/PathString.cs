@@ -57,12 +57,12 @@ namespace RI.Utilities.Paths
         /// </remarks>
         public static bool Equals (PathString x, PathString y)
         {
-            if (object.ReferenceEquals(x, null) && object.ReferenceEquals(y, null))
+            if (ReferenceEquals(x, null) && ReferenceEquals(y, null))
             {
                 return true;
             }
 
-            if (object.ReferenceEquals(x, null) || object.ReferenceEquals(y, null))
+            if (ReferenceEquals(x, null) || ReferenceEquals(y, null))
             {
                 return false;
             }
@@ -342,6 +342,12 @@ namespace RI.Utilities.Paths
             return this.PathInternal.IsCompatibleWith();
         }
 
+        /// <inheritdoc cref="IFormattable.ToString(string,IFormatProvider)" />
+        public string ToString (string format)
+        {
+            return this.PathInternal.ToString(format);
+        }
+
         #endregion
 
 
@@ -383,18 +389,6 @@ namespace RI.Utilities.Paths
         public override string ToString ()
         {
             return this.PathInternal.ToString();
-        }
-
-        /// <inheritdoc />
-        string IFormattable.ToString(string format, IFormatProvider formatProvider)
-        {
-            return ((IFormattable)this.PathInternal).ToString(format, formatProvider);
-        }
-
-        /// <inheritdoc cref="IFormattable.ToString(string,IFormatProvider)" />
-        public string ToString(string format)
-        {
-            return this.PathInternal.ToString(format);
         }
 
         #endregion
@@ -465,6 +459,19 @@ namespace RI.Utilities.Paths
         public bool Equals (PathString other)
         {
             return this.Equals(other?.PathInternal);
+        }
+
+        #endregion
+
+
+
+
+        #region Interface: IFormattable
+
+        /// <inheritdoc />
+        string IFormattable.ToString (string format, IFormatProvider formatProvider)
+        {
+            return ((IFormattable)this.PathInternal).ToString(format, formatProvider);
         }
 
         #endregion

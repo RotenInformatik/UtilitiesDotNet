@@ -65,9 +65,9 @@ namespace RI.Utilities.Text
         ///     Creates a new instance of <see cref="IndentedTextWriter" />.
         /// </summary>
         /// <param name="writer"> The <see cref="TextWriter" /> to encapsulate. </param>
-        /// <param name="doNotOwnWriter"> Specifies whether the encapsulated <see cref="TextWriter" /> is closed when this <see cref="IndentedTextWriter" /> is closed (false) or not (true). </param>
+        /// <param name="keepOpen"> Specifies whether the encapsulated <see cref="TextWriter" /> is closed when this <see cref="IndentedTextWriter" /> is closed (false) or not (true). </param>
         /// <exception cref="ArgumentNullException"> <paramref name="writer" /> is null. </exception>
-        public IndentedTextWriter (TextWriter writer, bool doNotOwnWriter)
+        public IndentedTextWriter (TextWriter writer, bool keepOpen)
         {
             if (writer == null)
             {
@@ -82,7 +82,7 @@ namespace RI.Utilities.Text
 
             this.IndentPending = true;
 
-            this.DoNotOwnWriter = doNotOwnWriter;
+            this.KeepOpen = keepOpen;
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace RI.Utilities.Text
             }
         }
 
-        private bool DoNotOwnWriter { get; }
+        private bool KeepOpen { get; }
 
         private bool IndentPending { get; set; }
 
@@ -227,7 +227,7 @@ namespace RI.Utilities.Text
         {
             if (this.BaseWriter != null)
             {
-                if (!this.DoNotOwnWriter)
+                if (!this.KeepOpen)
                 {
                     this.BaseWriter.Close();
                     this.BaseWriter.Dispose();

@@ -454,6 +454,8 @@ namespace RI.Utilities.DataFormats.Csv
 
 
 
+        #region Interface: ICopyable<CsvDocument>
+
         /// <inheritdoc />
         public void CopyTo (CsvDocument other)
         {
@@ -464,5 +466,7 @@ namespace RI.Utilities.DataFormats.Csv
 
             other.Data.AddRange(this.Data.Select(x => new List<string>(x)));
         }
+
+        #endregion
     }
 }

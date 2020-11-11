@@ -253,7 +253,7 @@ namespace RI.Utilities.Comparison
 
             if (referenceEquality)
             {
-                this.Comparer = (x, y) => object.ReferenceEquals(x, y);
+                this.Comparer = (x, y) => ReferenceEquals(x, y);
             }
             else
             {
@@ -294,7 +294,7 @@ namespace RI.Utilities.Comparison
                 return true;
             }
 
-            if (object.ReferenceEquals(x, y))
+            if (ReferenceEquals(x, y))
             {
                 return true;
             }

@@ -45,8 +45,6 @@ namespace RI.Utilities.Collections.Concurrent
     ///     </para>
     /// </remarks>
     /// <threadsafety static="true" instance="true" />
-    /// TODO: Implement RequestResponsePriorityQueue
-    /// TODO: Implement RequestResponseStack
     public abstract class RequestResponseCollection <TRequest, TResponse, TItem> : ISynchronizable
         where TItem : RequestResponseItem<TRequest, TResponse>, new()
     {
@@ -350,13 +348,13 @@ namespace RI.Utilities.Collections.Concurrent
                         return responseTask.Result;
                     }
 
-                    if (object.ReferenceEquals(result.Result, timeoutTask))
+                    if (ReferenceEquals(result.Result, timeoutTask))
                     {
                         item.NoLongerNeeded();
                         throw new TimeoutException();
                     }
 
-                    if (object.ReferenceEquals(result.Result, cancelTask))
+                    if (ReferenceEquals(result.Result, cancelTask))
                     {
                         item.NoLongerNeeded();
                         throw new OperationCanceledException();
@@ -425,12 +423,12 @@ namespace RI.Utilities.Collections.Concurrent
                         return consumerTask.Result;
                     }
 
-                    if (object.ReferenceEquals(result.Result, timeoutTask))
+                    if (ReferenceEquals(result.Result, timeoutTask))
                     {
                         throw new TimeoutException();
                     }
 
-                    if (object.ReferenceEquals(result.Result, cancelTask))
+                    if (ReferenceEquals(result.Result, cancelTask))
                     {
                         throw new OperationCanceledException();
                     }

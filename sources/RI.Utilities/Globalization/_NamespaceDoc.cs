@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.Globalization
 {
-	/// <summary>
-	///     Contains globalization utilities and extensions.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains globalization utilities and extensions.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

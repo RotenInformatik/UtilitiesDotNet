@@ -18,7 +18,6 @@ namespace RI.Utilities.DataFormats.Csv
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Add constructor with doNotOwn parameter
     public sealed class CsvReader : IDisposable
     {
         #region Instance Constructor/Destructor
@@ -29,20 +28,52 @@ namespace RI.Utilities.DataFormats.Csv
         /// <param name="reader"> The used <see cref="TextReader" />. </param>
         /// <remarks>
         ///     <para>
+        ///         The wrapped reader is closed if this reader is closed.
+        ///     </para>
+        ///     <para>
         ///         CSV reader settings with default values are used.
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
         public CsvReader (TextReader reader)
-            : this(reader, null) { }
+            : this(reader, false, null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="CsvReader" />.
         /// </summary>
         /// <param name="reader"> The used <see cref="TextReader" />. </param>
         /// <param name="settings"> The used CSV reader settings or null if default values should be used. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The wrapped reader is closed if this reader is closed.
+        ///     </para>
+        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
         public CsvReader (TextReader reader, CsvReaderSettings settings)
+            : this(reader, false, settings) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="CsvReader" />.
+        /// </summary>
+        /// <param name="reader"> The used <see cref="TextReader" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this reader is closed (false) or kept open (true). </param>
+        /// <remarks>
+        ///     <para>
+        ///         CSV reader settings with default values are used.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
+        public CsvReader (TextReader reader, bool keepOpen)
+            : this(reader, keepOpen, null) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="CsvReader" />.
+        /// </summary>
+        /// <param name="reader"> The used <see cref="TextReader" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this reader is closed (false) or kept open (true). </param>
+        /// <param name="settings"> The used CSV reader settings or null if default values should be used. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
+        public CsvReader (TextReader reader, bool keepOpen, CsvReaderSettings settings)
         {
             if (reader == null)
             {
@@ -50,6 +81,7 @@ namespace RI.Utilities.DataFormats.Csv
             }
 
             this.BaseReader = reader;
+            this.KeepOpen = keepOpen;
             this.Settings = settings ?? new CsvReaderSettings();
 
             this.CurrentLineNumberInternal = 0;
@@ -146,6 +178,8 @@ namespace RI.Utilities.DataFormats.Csv
 
         private int CurrentLineNumberInternal { get; set; }
 
+        private bool KeepOpen { get; }
+
         #endregion
 
 
@@ -218,8 +252,7 @@ namespace RI.Utilities.DataFormats.Csv
 
                 readCharacters++;
 
-                //TODO: Fix line number detection
-
+                //TODO: #29: Fix line number detection
 
                 char currentChar = (char)current;
                 char? nextChar = next == -1 ? (char?)null : (char)next;
@@ -385,7 +418,11 @@ namespace RI.Utilities.DataFormats.Csv
         {
             if (this.BaseReader != null)
             {
-                this.BaseReader.Close();
+                if (!this.KeepOpen)
+                {
+                    this.BaseReader.Close();
+                }
+
                 this.BaseReader = null;
             }
         }

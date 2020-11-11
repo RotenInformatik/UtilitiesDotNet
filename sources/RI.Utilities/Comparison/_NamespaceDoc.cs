@@ -5,11 +5,9 @@
 
 namespace RI.Utilities.Comparison
 {
-	/// <summary>
-	///     Contains object and collection comparison utilities and extensions.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains object and collection comparison utilities and extensions.
+    /// </summary>
+    [CompilerGenerated,]
+    public sealed class NamespaceDoc { }
 }

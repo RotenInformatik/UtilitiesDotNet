@@ -10,6 +10,10 @@ Single assembly, based on .NET Standard 2.0, with no additional dependencies.
 
 ---
 
+The [API documentation](https://roteninformatik.github.io/UtilitiesDotNet/api/) provides a complete list of all available functionality.
+
+The following lists show a rough overview of some of the utilities and extensions.
+
 ## New types
 
 * Data formats
@@ -37,7 +41,7 @@ Single assembly, based on .NET Standard 2.0, with no additional dependencies.
   * **RomanNumber**
   * **RunningValues**
   * **StatisticValues**
-* Object model interfaces
+* Object model interfaces/contracts
   * **ICloneable**
   * **ICopyable**
   * **ISynchronizable**
@@ -59,9 +63,11 @@ Single assembly, based on .NET Standard 2.0, with no additional dependencies.
 
 * Integral types
   * **string**
+  * **bool**
   * **sbyte**, **short**, **int**, **long**
   * **byte**, **ushort**, **uint**, **ulong**
   * **float**, **double**, **decimal**
+  * **byte[ ]**
 * Commonly used types
   * **DateTime**
   * **TimeSpan**

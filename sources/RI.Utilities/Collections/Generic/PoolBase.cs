@@ -29,7 +29,7 @@ namespace RI.Utilities.Collections.Generic
         protected PoolBase ()
         {
             this.SyncRoot = new object();
-            
+
             this._freeItemsInternal = new List<T>();
         }
 
@@ -52,7 +52,7 @@ namespace RI.Utilities.Collections.Generic
             }
 
             this.SyncRoot = new object();
-            
+
             this._freeItemsInternal = new List<T>(capacity);
         }
 
@@ -64,6 +64,13 @@ namespace RI.Utilities.Collections.Generic
         #region Instance Fields
 
         private readonly List<T> _freeItemsInternal;
+
+        #endregion
+
+
+
+
+        #region Instance Properties/Indexer
 
         private object SyncRoot { get; }
 
@@ -258,7 +265,7 @@ namespace RI.Utilities.Collections.Generic
         /// </remarks>
         public T Take ()
         {
-            return this.Take(out var _);
+            return this.Take(out bool _);
         }
 
         /// <inheritdoc />

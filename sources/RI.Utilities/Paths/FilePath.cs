@@ -26,7 +26,7 @@ namespace RI.Utilities.Paths
     ///         It can be implicitly converted to a <see cref="string" /> to work seamless with APIs using <see cref="string" /> for paths.
     ///     </para>
     ///     <para>
-    ///         See <see cref="PathProperties" /> for possible format strings for <see cref="PathString.ToString(string)"/>.
+    ///         See <see cref="PathProperties" /> for possible format strings for <see cref="PathString.ToString(string)" />.
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
@@ -57,13 +57,6 @@ namespace RI.Utilities.Paths
     /// ]]>
     /// </code>
     /// </example>
-    /// TODO: AppendBytes
-    /// TODO: AppendText
-    /// TODO: OpenTextReader
-    /// TODO: OpenTextWriter
-    /// TODO: OpenBinaryReader
-    /// TODO: OpenBinaryWriter
-    /// TODO: OpenStream
     [Serializable,]
     public sealed class FilePath : PathString, ICloneable<FilePath>, IEquatable<FilePath>, IComparable<FilePath>
     {

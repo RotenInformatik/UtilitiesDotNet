@@ -19,7 +19,6 @@ namespace RI.Utilities.DataFormats.Ini
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Add constructor with doNotOwn parameter
     public sealed class IniReader : IDisposable
     {
         #region Instance Constructor/Destructor
@@ -30,20 +29,52 @@ namespace RI.Utilities.DataFormats.Ini
         /// <param name="reader"> The used <see cref="TextReader" />. </param>
         /// <remarks>
         ///     <para>
+        ///         The wrapped reader is closed if this reader is closed.
+        ///     </para>
+        ///     <para>
         ///         INI reader settings with default values are used.
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
         public IniReader (TextReader reader)
-            : this(reader, null) { }
+            : this(reader, false, null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="IniReader" />.
         /// </summary>
         /// <param name="reader"> The used <see cref="TextReader" />. </param>
         /// <param name="settings"> The used INI reader settings or null if default values should be used. </param>
+        /// <remarks>
+        ///     <para>
+        ///         The wrapped reader is closed if this reader is closed.
+        ///     </para>
+        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
         public IniReader (TextReader reader, IniReaderSettings settings)
+            : this(reader, false, settings) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="IniReader" />.
+        /// </summary>
+        /// <param name="reader"> The used <see cref="TextReader" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this reader is closed (false) or kept open (true). </param>
+        /// <remarks>
+        ///     <para>
+        ///         INI reader settings with default values are used.
+        ///     </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
+        public IniReader (TextReader reader, bool keepOpen)
+            : this(reader, keepOpen, null) { }
+
+        /// <summary>
+        ///     Creates a new instance of <see cref="IniReader" />.
+        /// </summary>
+        /// <param name="reader"> The used <see cref="TextReader" />. </param>
+        /// <param name="keepOpen"> Specifies whether the wrapped reader should be closed when this reader is closed (false) or kept open (true). </param>
+        /// <param name="settings"> The used INI reader settings or null if default values should be used. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="reader" /> is null. </exception>
+        public IniReader (TextReader reader, bool keepOpen, IniReaderSettings settings)
         {
             if (reader == null)
             {
@@ -51,6 +82,7 @@ namespace RI.Utilities.DataFormats.Ini
             }
 
             this.BaseReader = reader;
+            this.KeepOpen = keepOpen;
             this.Settings = settings ?? new IniReaderSettings();
 
             this.CurrentLineNumber = 0;
@@ -139,6 +171,8 @@ namespace RI.Utilities.DataFormats.Ini
         public IniReaderSettings Settings { get; }
 
         private string Buffer { get; set; }
+
+        private bool KeepOpen { get; }
 
         #endregion
 
@@ -251,7 +285,11 @@ namespace RI.Utilities.DataFormats.Ini
         {
             if (this.BaseReader != null)
             {
-                this.BaseReader.Close();
+                if (!this.KeepOpen)
+                {
+                    this.BaseReader.Close();
+                }
+
                 this.BaseReader = null;
             }
         }

@@ -17,7 +17,6 @@ namespace RI.Utilities.Collections
     ///     </para>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Add overloads for all random methods with default randomizer
     public static class IReadonlyListExtensions
     {
         #region Static Methods

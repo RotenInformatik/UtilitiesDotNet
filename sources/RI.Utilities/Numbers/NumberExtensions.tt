@@ -234,8 +234,81 @@ string clsCompliance = isClsCompliant[i1] ? "[CLSCompliant(true)]" : "[CLSCompli
             return max;
         }
 
-        //TODO: GCD from sequence
-        //TODO: LCM from sequence
+        /// <summary>
+        /// Finds the greatest common divisor (GCD) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The GCD of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
+        public static <#=type#> Gcd (this IEnumerable<<#=type#>> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            <#=type#> gcd = 0;
+            int index = 0;
+            foreach(<#=type#> value in values)
+            {
+                if(index == 0)
+                {
+                    gcd = value;
+                }
+                else
+                {
+                    gcd = MathUtils.Gcd(gcd, value);
+                }
+                index++;
+            }
+            return gcd;
+        }
+
+        /// <summary>
+        /// Finds the least common multiple (LCM) of a sequence of values.
+        /// </summary>
+        /// <param name="values">The sequence of values.</param>
+        /// <returns>
+        /// The LCM of the sequence or zero if the sequence is empty.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// <paramref name="values" /> is enumerated only once.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="values" /> is null. </exception>
+        <#=clsCompliance#>
+        public static <#=type#> Lcm (this IEnumerable<<#=type#>> values)
+        {
+            if(values == null)
+            {
+                throw new ArgumentNullException(nameof(values));
+            }
+
+            <#=type#> lcm = 0;
+            int index = 0;
+            foreach(<#=type#> value in values)
+            {
+                if(index == 0)
+                {
+                    lcm = value;
+                }
+                else
+                {
+                    lcm = MathUtils.Lcm(lcm, value);
+                }
+                index++;
+            }
+            return lcm;
+        }
 <#
 if(type != "float")
 {
@@ -384,8 +457,8 @@ string clsCompliance = isClsCompliant[i1] ? "[CLSCompliant(true)]" : "[CLSCompli
         /// <returns>
         /// The absolute number.
         /// </returns>
-        // ReSharper disable once IntVariableOverflowInUncheckedContext
         <#=clsCompliance#>
+        // ReSharper disable once IntVariableOverflowInUncheckedContext
         public static <#=type#> Abs (this <#=type#> value) => value < <#=zero#> ? (<#=type#>)(<#=minusOne#> * value) : value;
 
         /// <summary>

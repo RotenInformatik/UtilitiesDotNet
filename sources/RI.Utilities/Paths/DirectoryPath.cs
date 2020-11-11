@@ -25,7 +25,7 @@ namespace RI.Utilities.Paths
     ///         It can be implicitly converted to a <see cref="string" /> to work seamless with APIs using <see cref="string" /> for paths.
     ///     </para>
     ///     <para>
-    ///         See <see cref="PathProperties" /> for possible format strings for <see cref="PathString.ToString(string)"/>.
+    ///         See <see cref="PathProperties" /> for possible format strings for <see cref="PathString.ToString(string)" />.
     ///     </para>
     ///     <para>
     ///         See <see cref="FilePath" /> for an example how to use <see cref="DirectoryPath" /> and <see cref="FilePath" />.
@@ -39,8 +39,6 @@ namespace RI.Utilities.Paths
     /// ]]>
     /// </code>
     /// </example>
-    /// TODO: Copy methods
-    /// TODO: Move methods
     [Serializable,]
     public sealed class DirectoryPath : PathString, ICloneable<DirectoryPath>, IEquatable<DirectoryPath>, IComparable<DirectoryPath>
     {

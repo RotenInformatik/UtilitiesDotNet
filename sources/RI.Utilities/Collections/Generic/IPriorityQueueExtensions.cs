@@ -10,9 +10,6 @@ namespace RI.Utilities.Collections.Generic
     ///     Provides utility/extension methods for the <see cref="IPriorityQueue{T}" /> type and its implementations.
     /// </summary>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: EnqueueRange
-    /// TODO: DequeueAll
-    /// TODO: PeekAll
     public static class IPriorityQueueExtensions
     {
         #region Static Methods
