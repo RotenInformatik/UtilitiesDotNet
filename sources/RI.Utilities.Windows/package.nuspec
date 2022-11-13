@@ -2,25 +2,25 @@
 
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
-    <id>RI.Utilities</id>
+    <id>RI.Utilities.Windows</id>
     <version>1.3.0.0</version>
     <authors>RotenInformatik</authors>
     <owners>RotenInformatik</owners>
-    <title>RI.Utilities</title>
+    <title>RI.Utilities.Windows</title>
     <copyright>Apache 2.0 license; 2011-2022 Franziska Roten</copyright>
     <description>Assorted utilities and extensions for .NET</description>
-    <tags>dotnet utilities extensions</tags>
+    <tags>dotnet utilities extensions windows</tags>
     <icon>images\ICON.png</icon>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/RotenInformatik/UtilitiesDotNet</projectUrl>
     <dependencies>
-      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework="netcoreapp3.1" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Debug\netstandard2.0\RI.Utilities.dll" target="lib\netstandard2.0\RI.Utilities.dll" />
-    <file src="bin\Debug\netstandard2.0\RI.Utilities.xml" target="lib\netstandard2.0\RI.Utilities.xml" />
+    <file src="bin\Debug\netcoreapp3.1\RI.Utilities.Windows.dll" target="lib\netcoreapp3.1\RI.Utilities.Windows.dll" />
+    <file src="bin\Debug\netcoreapp3.1\RI.Utilities.Windows.xml" target="lib\netcoreapp3.1\RI.Utilities.Windows.xml" />
     <file src="..\..\ICON.png" target="images\ICON.png" />
   </files>
 </package>

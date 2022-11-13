@@ -2,15 +2,17 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<LangVersion>latest</LangVersion>
-		<UseWindowsForms>false</UseWindowsForms>
+		<UseWindowsForms>true</UseWindowsForms>
 		<Platforms>x64;x86;AnyCPU</Platforms>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
+		<RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<AssemblyName>RI.Utilities</AssemblyName>
+		<AssemblyName>RI.Utilities.Windows</AssemblyName>
 		<RootNamespace>RI.Utilities</RootNamespace>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
@@ -37,14 +39,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="Numbers\MathUtils.tt">
-			<Generator>TextTemplatingFileGenerator</Generator>
-			<LastGenOutput>MathUtils.tt.cs</LastGenOutput>
-		</None>
-		<None Update="Numbers\NumberExtensions.tt">
-			<Generator>TextTemplatingFileGenerator</Generator>
-			<LastGenOutput>NumberExtensions.tt.cs</LastGenOutput>
-		</None>
 		<None Include="..\..\ICON.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
@@ -52,16 +46,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Numbers\MathUtils.tt.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>MathUtils.tt</DependentUpon>
-		</Compile>
-		<Compile Update="Numbers\NumberExtensions.tt.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>NumberExtensions.tt</DependentUpon>
-		</Compile>
+		<PackageReference Include="System.IO.Ports" Version="5.0.1" />
+		<PackageReference Include="System.Management" Version="5.0.0" />
+		<PackageReference Include="System.Security.Cryptography.ProtectedData" Version="5.0.0" />
+		<PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+		<PackageReference Include="System.Windows.Extensions" Version="5.0.0" />
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\RI.Utilities\RI.Utilities.csproj" />
 	</ItemGroup>
 
 </Project>
